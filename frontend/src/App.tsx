@@ -20,16 +20,10 @@ function uid() {
 
 export default function App() {
   const [messages, setMessages] = useState<Message[]>([WELCOME]);
-  const [ads, setAds] = useState<Ad[]>([]);
+  const [ads] = useState<Ad[]>(() => loadAds());
   const [loading, setLoading] = useState(false);
-  const [adsLoaded, setAdsLoaded] = useState(false);
+  const adsLoaded = true;
   const bottomRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    loadAds()
-      .then(setAds)
-      .finally(() => setAdsLoaded(true));
-  }, []);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });

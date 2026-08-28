@@ -1,0 +1,11 @@
+id|title|description|category|keywords|price|url
+1|Premium Black Tea Collection|Rich, full-bodied black tea blends perfect for morning rituals. Save 20% on bulk packs.|beverages|black tea,tea,beverage,hot drink,morning|$12.99|https://www.tetleyusa.com/
+2|Irish Spring Body Wash|Fresh, invigorating soap and body wash. Buy 2 get 1 free this week.|personal care|soap,body wash,shower,hygiene,clean|$4.99|https://www.irishspring.com/en-us
+3|Organic Green Tea Sampler|Explore 6 varieties of organic green tea from Japan and China.|beverages|green tea,tea,organic,wellness|$18.50|https://www.tetleyusa.com/
+4|Dove Sensitive Skin Bar|Gentle cleansing bar for sensitive skin. Dermatologist recommended.|personal care|soap,bar soap,sensitive skin,skincare|$3.49|https://www.irishspring.com/en-us
+5|Earl Grey Tea Bags|Classic bergamot-scented Earl Grey. 100-count box on sale.|beverages|earl grey,black tea,tea bags,beverage|$9.99|https://www.tetleyusa.com/
+6|Colgate Total Toothpaste|Advanced whitening toothpaste with 12-hour protection. Family pack deal.|personal care|toothpaste,dental,oral care,hygiene|$5.99|https://www.colgate.com/
+7|Starbucks Pike Place Roast|Medium roast ground coffee. 20% off with subscription.|beverages|coffee,ground coffee,morning,beverage|$11.99|https://www.starbucks.com/
+8|Bounty Paper Towels|Select-a-size paper towels. 8-pack mega roll bundle.|household|paper towels,cleaning,kitchen,household|$14.99|https://www.bounty.com/
+9|Chamomile Herbal Tea|Calming chamomile blend for relaxation before bed.|beverages|herbal tea,chamomile,tea,relaxation|$7.49|https://www.tetleyusa.com/
+10|Old Spice Deodorant|Classic scent deodorant. 3-pack value bundle.|personal care|deodorant,grooming,personal care,hygiene|$8.99|https://www.oldspice.com/

@@ -1,18 +1,19 @@
+import adsText from "./data/ads.txt?raw";
 import type { Ad } from "./types";
 
-export async function loadAds(): Promise<Ad[]> {
-  const response = await fetch("/data/ads.txt");
-  const text = await response.text();
-  return parseAds(text);
+export function loadAds(): Ad[] {
+  return parseAds(adsText);
 }
 
 function parseAds(text: string): Ad[] {
   const lines = text.trim().split("\n");
   const [, ...dataLines] = lines;
 
-  return dataLines.map((line) => {
-    const [id, title, description, category, keywords, price, url] =
-      line.split("|");
-    return { id, title, description, category, keywords, price, url };
-  });
+  return dataLines
+    .filter((line) => line.trim().length > 0)
+    .map((line) => {
+      const [id, title, description, category, keywords, price, url] =
+        line.split("|");
+      return { id, title, description, category, keywords, price, url };
+    });
 }
