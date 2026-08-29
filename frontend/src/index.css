@@ -158,6 +158,16 @@ body {
   background: var(--assistant-bubble);
 }
 
+.inline-link {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.inline-link:hover {
+  color: var(--accent-hover);
+}
+
 .avatar {
   width: 32px;
   height: 32px;
@@ -255,6 +265,12 @@ body {
   color: var(--text-muted);
   line-height: 1.45;
   flex: 1;
+}
+
+.ad-url {
+  font-size: 0.78rem;
+  color: var(--accent);
+  word-break: break-all;
 }
 
 .ad-link {

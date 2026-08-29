@@ -102,7 +102,7 @@ export function buildAssistantReply(
 
   return `I found ${count} ${plural} for "${query}". ${
     top.score > 0.5
-      ? `The best match looks like **${top.ad.title}** at ${top.ad.price}.`
+      ? `The best match is [${top.ad.title}](${top.ad.url}) at ${top.ad.price}.`
       : "Here are the closest matches I found:"
-  } Click any deal below to visit the offer site.`;
+  } Click any deal card below to visit the partner site.`;
 }

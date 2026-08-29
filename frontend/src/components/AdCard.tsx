@@ -4,6 +4,10 @@ interface Props {
   ad: Ad;
 }
 
+function displayUrl(url: string) {
+  return url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "");
+}
+
 export function AdCard({ ad }: Props) {
   return (
     <a
@@ -18,6 +22,7 @@ export function AdCard({ ad }: Props) {
       </div>
       <h3 className="ad-title">{ad.title}</h3>
       <p className="ad-description">{ad.description}</p>
+      <span className="ad-url">{displayUrl(ad.url)}</span>
       <span className="ad-link">
         View deal
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
