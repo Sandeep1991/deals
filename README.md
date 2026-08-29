@@ -16,19 +16,11 @@ This app is a static React SPA — no Docker or server required on Azure.
    |---|---|
    | App location | `frontend` |
    | API location | *(leave empty)* |
-   | Output location | `dist` |
+   | Output location | `build` |
 
 4. Azure creates a GitHub Actions workflow and adds a deployment token secret automatically (e.g. `AZURE_STATIC_WEB_APPS_API_TOKEN_*`)
 
-The workflow in this repo builds from `frontend/` and outputs to `dist/`. If you created the Static Web App in Azure Portal, update the portal build settings to match:
-
-   | Setting | Value |
-   |---|---|
-   | App location | `frontend` |
-   | API location | *(leave empty)* |
-   | Output location | `dist` |
-
-   > **Important:** Azure's default template often sets output to `build` — change it to `dist` for Vite.
+The workflow in this repo builds from `frontend/` and outputs to `build/`.
 
 ### After deploy
 
