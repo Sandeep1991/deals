@@ -6,27 +6,3 @@ services:
     ports:
       - "3000:80"
     container_name: deals-chat
-
-  api:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    ports:
-      - "8000:8000"
-    env_file:
-      - ./backend/.env
-    container_name: deals-api
-
-  ollama:
-    image: ollama/ollama:latest
-    ports:
-      - "11434:11434"
-    volumes:
-      - ollama_data:/root/.ollama
-    container_name: deals-ollama
-    profiles:
-      - llm
-      - full
-
-volumes:
-  ollama_data:
