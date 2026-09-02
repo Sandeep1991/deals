@@ -1,0 +1,504 @@
+{
+  "ads": [
+    {
+      "id": "walmart-101",
+      "title": "Great Value 80% Lean Ground Beef Chuck",
+      "description": "1 lb tray, fresh all-natural ground beef chuck. Walmart Rollback or everyday low price.",
+      "category": "meat",
+      "keywords": "ground beef,ground chuck,great value,meat,protein,walmart deal,discount",
+      "price": "$4.97",
+      "url": "https://www.walmart.com/ip/80-Lean-20-Fat-Ground-Beef-Chuck-1-lb-Tray-Fresh-All-Natural/479601462",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-102",
+      "title": "USDA Choice Ribeye Steak Family Pack",
+      "description": "Fresh boneless ribeye beef steaks, family pack tray. Walmart meat department.",
+      "category": "meat",
+      "keywords": "ribeye,steak,beef,grilling,meat,family pack,walmart deal",
+      "price": "$11.47/lb",
+      "url": "https://www.walmart.com/ip/Ribeye-Steak-Choice-Angus-Beef-1-per-Package-Fresh-0-9-1-6-lb/5001801215",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-103",
+      "title": "Pork Back Ribs or Tyson Boneless Chicken Breasts",
+      "description": "Fresh bone-in pork back ribs or Tyson all-natural boneless skinless chicken breasts. Select varieties.",
+      "category": "meat",
+      "keywords": "pork ribs,chicken breast,tyson,grilling,meat,walmart deal",
+      "price": "$2.97/lb",
+      "url": "https://www.walmart.com/ip/Tyson-All-Natural-Fresh-Boneless-Skinless-Chicken-Breasts-1-75-3-0-lb-Tray/50067993",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-104",
+      "title": "Fresh Seedless Grapes",
+      "description": "Red, green, or black seedless grapes sold by the pound. Fresh produce.",
+      "category": "produce",
+      "keywords": "grapes,fruit,produce,seedless,fresh,walmart deal",
+      "price": "$1.98/lb",
+      "url": "https://www.walmart.com/search?q=seedless+grapes",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-105",
+      "title": "Yellow or White Peaches or Nectarines",
+      "description": "Fresh yellow or white peaches or nectarines. Sold by the pound.",
+      "category": "produce",
+      "keywords": "peaches,nectarines,fruit,produce,fresh,walmart deal",
+      "price": "$1.98/lb",
+      "url": "https://www.walmart.com/search?q=fresh+peaches+nectarines",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-106",
+      "title": "Fresh Blueberries",
+      "description": "Fresh blueberries, pint or 11 oz package. Select sizes.",
+      "category": "produce",
+      "keywords": "blueberries,berries,fruit,produce,fresh,walmart deal",
+      "price": "$3.97",
+      "url": "https://www.walmart.com/search?q=fresh+blueberries",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-107",
+      "title": "Coca-Cola, Pepsi or 7UP 12-Pack Rollback",
+      "description": "Select varieties, 12-pack 12 fl oz cans. Rollback pricing on select soda 12-packs.",
+      "category": "beverages",
+      "keywords": "soda,coca-cola,pepsi,7up,soft drink,rollback,deal,discount,walmart deal",
+      "price": "$8.42",
+      "url": "https://www.walmart.com/ip/Coca-Cola-Classic-Soda-Pop-Fridge-Pack-12-fl-Oz-Cans-12-Pack/13594069908",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-108",
+      "title": "Doritos, Cheetos or Ruffles Family Size",
+      "description": "Doritos 9-10.75 oz, Cheetos 6.5-9 oz, or Ruffles 7.25-10.25 oz. Select varieties.",
+      "category": "snacks",
+      "keywords": "chips,doritos,cheetos,ruffles,snacks,deal,discount,walmart deal",
+      "price": "From $3.98",
+      "url": "https://www.walmart.com/ip/Doritos-Nacho-Cheese-Flavored-Tortilla-Chips-9-25-oz-Bag/44390955",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-109",
+      "title": "Great Value Ice Cream 48 fl oz",
+      "description": "Select varieties including vanilla, chocolate, and strawberry. 48 fl oz tub.",
+      "category": "frozen",
+      "keywords": "ice cream,dessert,frozen,great value,walmart deal",
+      "price": "$2.97",
+      "url": "https://www.walmart.com/ip/Great-Value-Strawberry-Ice-Cream-48-fl-oz/12329738",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-110",
+      "title": "Great Value Sour Cream, Cottage Cheese or Dip",
+      "description": "Select varieties, 16 oz sour cream or cottage cheese. Great Value brand.",
+      "category": "dairy",
+      "keywords": "sour cream,cottage cheese,dip,dairy,great value,walmart deal",
+      "price": "$1.88",
+      "url": "https://www.walmart.com/ip/Great-Value-Original-Sour-Cream-16-oz/10450115",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-111",
+      "title": "Great Value Salted Butter 2-Pack",
+      "description": "Great Value salted butter sticks, 2-pack (16 oz total). Select varieties.",
+      "category": "dairy",
+      "keywords": "butter,dairy,great value,everyday price,walmart deal",
+      "price": "$5.48",
+      "url": "https://www.walmart.com/ip/Great-Value-Salted-Butter-Sticks-8-oz-Box-2-Count/10450114",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-112",
+      "title": "Great Value Pasta or StarKist Tuna",
+      "description": "Great Value pasta 12-16 oz or StarKist chunk light tuna 5 oz can. Select varieties.",
+      "category": "pantry",
+      "keywords": "pasta,tuna,starkist,great value,pantry,walmart deal,discount",
+      "price": "98¢",
+      "url": "https://www.walmart.com/ip/StarKist-Chunk-Light-Tuna-in-Water-5-oz-Can/10294969",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-113",
+      "title": "Powerade or BodyArmor Sports Drinks",
+      "description": "Powerade 28 fl oz or BodyArmor 16 fl oz. Select varieties.",
+      "category": "beverages",
+      "keywords": "sports drink,powerade,bodyarmor,beverage,walmart deal",
+      "price": "88¢",
+      "url": "https://www.walmart.com/search?q=powerade+28+oz",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-114",
+      "title": "Bud Light, Miller Lite or Coors Light 24-Pack",
+      "description": "Select varieties, 24-pack 12 fl oz cans.",
+      "category": "beverages",
+      "keywords": "beer,bud,miller,coors,alcohol,beverage,walmart deal",
+      "price": "$17.98",
+      "url": "https://www.walmart.com/search?q=bud+light+24+pack+cans",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-115",
+      "title": "Johnsonville Dinner or Breakfast Sausage",
+      "description": "Dinner sausage 12-19 oz or breakfast sausage 9.6-12 oz. Select varieties.",
+      "category": "meat",
+      "keywords": "sausage,johnsonville,breakfast,dinner,meat,walmart deal",
+      "price": "$3.97",
+      "url": "https://www.walmart.com/search?q=johnsonville+sausage",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-116",
+      "title": "Fresh Seedless Watermelon",
+      "description": "Whole seedless watermelon, each. Fresh produce.",
+      "category": "produce",
+      "keywords": "watermelon,fruit,produce,seedless,walmart deal",
+      "price": "$4.48",
+      "url": "https://www.walmart.com/search?q=seedless+watermelon",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-117",
+      "title": "Gatorade 12-Pack or Nestlé Drumstick",
+      "description": "Gatorade 12-pack 12 fl oz or Nestlé Drumstick 8-20 ct. Select varieties.",
+      "category": "beverages",
+      "keywords": "gatorade,drumstick,ice cream,sports drink,walmart deal",
+      "price": "$5.98",
+      "url": "https://www.walmart.com/search?q=gatorade+12+pack",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-118",
+      "title": "Lay's, Kettle Cooked Chips or Tostitos",
+      "description": "Lay's 5-8 oz or Tostitos Cantina chips 9-13 oz. Select varieties.",
+      "category": "snacks",
+      "keywords": "chips,lays,tostitos,snacks,walmart deal,discount",
+      "price": "$2.50",
+      "url": "https://www.walmart.com/search?q=lays+potato+chips",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-119",
+      "title": "Oscar Mayer Bacon",
+      "description": "Select varieties, 12-16 oz. Fully cooked or original.",
+      "category": "meat",
+      "keywords": "bacon,oscar mayer,breakfast,meat,walmart deal",
+      "price": "$4.98",
+      "url": "https://www.walmart.com/search?q=oscar+mayer+bacon",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-120",
+      "title": "Nabisco Snack Crackers or Ritz",
+      "description": "Nabisco family size snack crackers 11.5-14 oz or Ritz 17.4-20.8 oz. Select varieties.",
+      "category": "snacks",
+      "keywords": "crackers,ritz,nabisco,wheat thins,snacks,walmart deal",
+      "price": "$3.48",
+      "url": "https://www.walmart.com/search?q=ritz+crackers+family+size",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-121",
+      "title": "Nabisco Oreo or Chips Ahoy Cookies",
+      "description": "Family size Oreo or Chips Ahoy, 7.14-20 oz. Select varieties.",
+      "category": "snacks",
+      "keywords": "cookies,oreo,chips ahoy,nabisco,dessert,walmart deal",
+      "price": "$3.48",
+      "url": "https://www.walmart.com/search?q=oreo+family+size",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-122",
+      "title": "Ore-Ida Frozen Potatoes or Häagen-Dazs Ice Cream",
+      "description": "Ore-Ida frozen potatoes or Häagen-Dazs ice cream 14 fl oz. Select varieties.",
+      "category": "frozen",
+      "keywords": "frozen fries,ice cream,haagen dazs,ore-ida,frozen,walmart deal",
+      "price": "$2.98",
+      "url": "https://www.walmart.com/search?q=ore-ida+frozen+fries",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-123",
+      "title": "DiGiorno Pizza or Hot Pockets",
+      "description": "DiGiorno rising crust pizza 14-30 oz or Hot Pockets 4 ct. Select varieties.",
+      "category": "frozen",
+      "keywords": "pizza,digiorno,hot pockets,frozen,walmart deal",
+      "price": "$4.88",
+      "url": "https://www.walmart.com/ip/DiGiorno-Rising-Crust-Four-Cheese-Pizza-24-6-oz-Frozen/5461555500",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-124",
+      "title": "Kellogg's Family Size Cereal",
+      "description": "Select varieties including Frosted Flakes and Rice Krispies, 12-20.9 oz.",
+      "category": "breakfast",
+      "keywords": "cereal,kelloggs,frosted flakes,breakfast,walmart deal",
+      "price": "$4.98",
+      "url": "https://www.walmart.com/ip/Kellogg-s-Rice-Krispies-Original-Breakfast-Cereal-Family-Size-18-oz-Box/673307857",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-125",
+      "title": "Hellmann's Mayonnaise",
+      "description": "Select varieties, 20-30 fl oz. Real mayonnaise.",
+      "category": "pantry",
+      "keywords": "mayonnaise,hellmanns,condiment,pantry,walmart deal",
+      "price": "$4.48",
+      "url": "https://www.walmart.com/search?q=hellmanns+mayonnaise",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-126",
+      "title": "Kingsford Charcoal",
+      "description": "Original or Match Light, select varieties, 12-16 lb bag.",
+      "category": "household",
+      "keywords": "charcoal,kingsford,grilling,bbq,household,walmart deal",
+      "price": "$8.88",
+      "url": "https://www.walmart.com/search?q=kingsford+charcoal",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-127",
+      "title": "Great Value Shredded Cheese 8 oz",
+      "description": "Select varieties including Mexican Style Blend shredded cheese.",
+      "category": "dairy",
+      "keywords": "cheese,shredded cheese,dairy,great value,everyday price",
+      "price": "$1.97",
+      "url": "https://www.walmart.com/search?q=great+value+shredded+cheese+8+oz",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-128",
+      "title": "Great Value White Bread 20 oz",
+      "description": "Select varieties including Classic White sandwich bread.",
+      "category": "bakery",
+      "keywords": "bread,white bread,bakery,great value,everyday price",
+      "price": "$1.28",
+      "url": "https://www.walmart.com/search?q=great+value+white+bread",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-129",
+      "title": "Butterball Turkey Bacon",
+      "description": "Select varieties, 12 oz. Lower fat bacon alternative.",
+      "category": "meat",
+      "keywords": "turkey bacon,bacon,butterball,breakfast,meat",
+      "price": "$3.98",
+      "url": "https://www.walmart.com/search?q=butterball+turkey+bacon",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-130",
+      "title": "Fresh Lemons",
+      "description": "Fresh whole lemons, each. Produce department.",
+      "category": "produce",
+      "keywords": "lemons,citrus,fruit,produce,fresh",
+      "price": "58¢ each",
+      "url": "https://www.walmart.com/search?q=fresh+lemons",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-131",
+      "title": "Marketside Fresh Baked Cookies 12 ct",
+      "description": "Select varieties in the bakery. Chocolate chip and more.",
+      "category": "bakery",
+      "keywords": "cookies,bakery,chocolate chip,dessert,fresh baked,marketside",
+      "price": "$2.98",
+      "url": "https://www.walmart.com/search?q=marketside+cookies",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-132",
+      "title": "Yellow Squash or Zucchini",
+      "description": "Fresh yellow squash or zucchini. Sold by the pound.",
+      "category": "produce",
+      "keywords": "squash,zucchini,vegetables,produce,fresh",
+      "price": "$1.48/lb",
+      "url": "https://www.walmart.com/search?q=yellow+squash+zucchini",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-133",
+      "title": "Marketside Angus Burger Patties",
+      "description": "Fresh angus beef burger patties, 1.32-1.33 lb tray. Game day grilling.",
+      "category": "meat",
+      "keywords": "burger,patties,beef,grilling,gameday,meat,marketside,walmart deal",
+      "price": "$9.97",
+      "url": "https://www.walmart.com/search?q=marketside+burger+patties",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-134",
+      "title": "Kraft Shredded Cheese",
+      "description": "Select varieties, 7-8 oz. Natural shredded cheese.",
+      "category": "dairy",
+      "keywords": "cheese,kraft,shredded,dairy,gameday,walmart deal",
+      "price": "$2.98",
+      "url": "https://www.walmart.com/search?q=kraft+shredded+cheese",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-135",
+      "title": "Great Value Soda 2 Liter",
+      "description": "Select varieties including cola, 2 liter bottle.",
+      "category": "beverages",
+      "keywords": "soda,great value,cola,soft drink,beverage,everyday price",
+      "price": "88¢",
+      "url": "https://www.walmart.com/search?q=great+value+cola+2+liter",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-136",
+      "title": "Marketside St. Louis Style Ribs",
+      "description": "Fully cooked St. Louis style pork ribs, 2 lb, in the deli.",
+      "category": "deli",
+      "keywords": "ribs,marketside,bbq,deli,gameday,walmart deal",
+      "price": "$12.98",
+      "url": "https://www.walmart.com/search?q=marketside+ribs",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-137",
+      "title": "Kettle Brand Potato Chips",
+      "description": "Select varieties, 6-7.5 oz. Kettle cooked chips.",
+      "category": "snacks",
+      "keywords": "chips,kettle brand,snacks,gameday,walmart deal",
+      "price": "$3.98",
+      "url": "https://www.walmart.com/search?q=kettle+brand+potato+chips",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-138",
+      "title": "Bush's Best Baked or Grillin' Beans",
+      "description": "Select varieties, 22-28 oz cans.",
+      "category": "pantry",
+      "keywords": "baked beans,bushs,pantry,bbq,gameday,walmart deal",
+      "price": "$2.48",
+      "url": "https://www.walmart.com/search?q=bushs+baked+beans",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-139",
+      "title": "Great Value Ultra Paper Towels 6 Double Rolls",
+      "description": "6 double rolls, ultra absorbent paper towels.",
+      "category": "household",
+      "keywords": "paper towels,household,cleaning,great value,walmart deal",
+      "price": "$5.48",
+      "url": "https://www.walmart.com/search?q=great+value+paper+towels+6+double",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-140",
+      "title": "Great Value 80% Lean Ground Beef Big Pack",
+      "description": "3 lb total weight value pack. Bulk ground beef.",
+      "category": "meat",
+      "keywords": "ground beef,big pack,meat,bulk,great value,everyday price",
+      "price": "$18.97",
+      "url": "https://www.walmart.com/search?q=great+value+ground+beef+3+lb",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-141",
+      "title": "Great Value Soft & Strong Bath Tissue 30 Mega Rolls",
+      "description": "Soft & Strong bath tissue, 30 mega rolls. Big pack value.",
+      "category": "household",
+      "keywords": "toilet paper,bath tissue,household,big pack,great value,walmart deal",
+      "price": "$18.97",
+      "url": "https://www.walmart.com/search?q=great+value+toilet+paper+30+mega",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-142",
+      "title": "Marketside Premium Grapes 2 lb",
+      "description": "Select varieties, 2 lb package. Fresh seedless grapes.",
+      "category": "produce",
+      "keywords": "grapes,marketside,fruit,produce,fresh,walmart deal",
+      "price": "$5.48",
+      "url": "https://www.walmart.com/search?q=marketside+grapes+2+lb",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-143",
+      "title": "Marketside Organic Seedless Grapes",
+      "description": "Organic red, green, or black seedless grapes, 2 lb package.",
+      "category": "produce",
+      "keywords": "grapes,organic,marketside,fruit,produce,walmart deal",
+      "price": "$5.48",
+      "url": "https://www.walmart.com/search?q=organic+seedless+grapes",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-144",
+      "title": "Grapery Specialty Grapes",
+      "description": "Cotton Candy, Gum Drops, or Moon Drops specialty grapes. Sold by the pound.",
+      "category": "produce",
+      "keywords": "specialty grapes,cotton candy grapes,fruit,produce,walmart deal",
+      "price": "$3.98/lb",
+      "url": "https://www.walmart.com/search?q=cotton+candy+grapes",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-145",
+      "title": "Fresh Chicken Drumsticks",
+      "description": "Bone-in chicken drumsticks. Also boneless chicken tenders available.",
+      "category": "meat",
+      "keywords": "chicken,drumsticks,poultry,meat,fresh,walmart deal",
+      "price": "98¢/lb",
+      "url": "https://www.walmart.com/search?q=chicken+drumsticks",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-146",
+      "title": "Fresh Atlantic Salmon Whole Fillet",
+      "description": "Farm-raised Atlantic salmon whole fillet. Seafood department.",
+      "category": "seafood",
+      "keywords": "salmon,fish,seafood,fresh,walmart deal",
+      "price": "$8.48/lb",
+      "url": "https://www.walmart.com/search?q=atlantic+salmon+fillet",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-147",
+      "title": "Great Value Extra Large Cooked Shrimp",
+      "description": "26-30 ct cooked shrimp, 2 lb bag. Frozen seafood.",
+      "category": "seafood",
+      "keywords": "shrimp,seafood,cooked shrimp,great value,walmart deal",
+      "price": "$16.97",
+      "url": "https://www.walmart.com/search?q=great+value+cooked+shrimp",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-148",
+      "title": "Marketside Fried or Rotisserie Chicken 8-Piece",
+      "description": "Fully cooked 8-piece chicken: 2 breasts, 2 thighs, 2 wings, 2 drumsticks. Deli hot case.",
+      "category": "deli",
+      "keywords": "fried chicken,rotisserie chicken,marketside,deli,walmart deal",
+      "price": "$8.98",
+      "url": "https://www.walmart.com/search?q=rotisserie+chicken+8+piece",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-149",
+      "title": "Marketside Pumpkin Cake Roll or Cheesecake",
+      "description": "Pumpkin cake roll or 6-inch cheesecake. Bakery department.",
+      "category": "bakery",
+      "keywords": "cake,cheesecake,pumpkin,dessert,bakery,marketside,walmart deal",
+      "price": "$7.48",
+      "url": "https://www.walmart.com/search?q=marketside+cheesecake",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-150",
+      "title": "Raspberries or Blackberries 6 oz",
+      "description": "6 oz package fresh raspberries or blackberries.",
+      "category": "produce",
+      "keywords": "raspberries,blackberries,berries,fruit,produce,walmart deal",
+      "price": "2 for $5",
+      "url": "https://www.walmart.com/search?q=raspberries+blackberries+6+oz",
+      "merchant": "Walmart"
+    }
+  ]
+}

@@ -3,6 +3,7 @@ import { ApiError, fetchChat, fetchHealth } from "./api";
 import type { Message } from "./types";
 import { AdCard } from "./components/AdCard";
 import { ChatInput } from "./components/ChatInput";
+import { ComparisonSummary } from "./components/ComparisonSummary";
 import { MessageBubble } from "./components/MessageBubble";
 
 const WELCOME: Message = {
@@ -38,7 +39,10 @@ export default function App() {
 
         if (health.search_configured) {
           setApiReady(true);
-          setStatusText("Search ready");
+          const compareHint = health.decompose_configured
+            ? " · meal planning ready"
+            : " · set up LLM for meal planning";
+          setStatusText(`Search ready${compareHint}`);
         } else {
           setApiReady(false);
           setStatusText("API online — search not configured");
@@ -76,12 +80,13 @@ export default function App() {
     setLoading(true);
 
     try {
-      const { reply, ads } = await fetchChat(trimmed);
+      const { reply, ads, comparison } = await fetchChat(trimmed);
       const assistantMsg: Message = {
         id: uid(),
         role: "assistant",
         content: reply,
         ads,
+        comparison,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, assistantMsg]);
@@ -130,6 +135,7 @@ export default function App() {
           {messages.map((msg) => (
             <div key={msg.id} className={`message-row ${msg.role}`}>
               <MessageBubble message={msg} />
+              {msg.comparison && <ComparisonSummary comparison={msg.comparison} />}
               {msg.ads && msg.ads.length > 0 && (
                 <div className="ad-grid">
                   {msg.ads.map((ad) => (
@@ -157,7 +163,7 @@ export default function App() {
 
         <div className="input-area">
           <div className="suggestions">
-            {["black tea", "soap", "coffee deals", "household"].map((s) => (
+            {["black tea", "PBJ party deals", "taco night for 4", "coffee deals"].map((s) => (
               <button
                 key={s}
                 className="suggestion-chip"

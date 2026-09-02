@@ -389,4 +389,102 @@ body {
     align-items: flex-start;
     gap: 8px;
   }
+
+  .comparison-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.comparison-card {
+  margin: 12px 0 0 44px;
+  padding: 16px;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.comparison-title {
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.comparison-store {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.comparison-store.recommended {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 1px rgba(16, 163, 127, 0.25);
+}
+
+.comparison-store-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.comparison-store h3 {
+  font-size: 0.95rem;
+}
+
+.comparison-badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(16, 163, 127, 0.15);
+  color: var(--accent);
+}
+
+.comparison-store ul {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+.comparison-store li {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding: 4px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.comparison-total {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.comparison-savings {
+  margin-top: 12px;
+  color: var(--accent);
+  font-size: 0.9rem;
+}
+
+.bubble-heading {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-top: 8px;
+}
+
+.bubble-list-item {
+  padding-left: 8px;
+  font-size: 0.92rem;
+}
+
+.bubble-muted {
+  color: var(--text-muted);
+  font-size: 0.85rem;
 }

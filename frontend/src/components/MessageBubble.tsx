@@ -4,7 +4,7 @@ interface Props {
   message: Message;
 }
 
-function formatContent(text: string) {
+function formatInline(text: string) {
   return text
     .split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g)
     .map((part, i) => {
@@ -31,6 +31,47 @@ function formatContent(text: string) {
     });
 }
 
+function formatContent(text: string) {
+  const lines = text.split("\n");
+  const blocks: JSX.Element[] = [];
+
+  lines.forEach((line, index) => {
+    const trimmed = line.trim();
+    if (!trimmed) return;
+
+    if (trimmed.startsWith("### ")) {
+      blocks.push(
+        <h4 key={index} className="bubble-heading">
+          {formatInline(trimmed.slice(4))}
+        </h4>
+      );
+      return;
+    }
+
+    if (trimmed.startsWith("- ")) {
+      blocks.push(
+        <p key={index} className="bubble-list-item">
+          {formatInline(trimmed.slice(2))}
+        </p>
+      );
+      return;
+    }
+
+    if (trimmed.startsWith("_") && trimmed.endsWith("_")) {
+      blocks.push(
+        <p key={index} className="bubble-muted">
+          <em>{trimmed.slice(1, -1)}</em>
+        </p>
+      );
+      return;
+    }
+
+    blocks.push(<p key={index}>{formatInline(trimmed)}</p>);
+  });
+
+  return blocks;
+}
+
 export function MessageBubble({ message }: Props) {
   return (
     <div className={`bubble ${message.role}`}>
@@ -39,9 +80,7 @@ export function MessageBubble({ message }: Props) {
           🏷️
         </span>
       )}
-      <div className="bubble-content">
-        <p>{formatContent(message.content)}</p>
-      </div>
+      <div className="bubble-content">{formatContent(message.content)}</div>
     </div>
   );
 }
