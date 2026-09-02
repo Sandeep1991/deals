@@ -17,7 +17,9 @@ export function AdCard({ ad }: Props) {
       className="ad-card"
     >
       <div className="ad-card-header">
-        <span className="ad-category">{ad.category}</span>
+        <span className="ad-category">
+          {ad.merchant ? `${ad.merchant} · ${ad.category}` : ad.category}
+        </span>
         <span className="ad-price">{ad.price}</span>
       </div>
       <h3 className="ad-title">{ad.title}</h3>

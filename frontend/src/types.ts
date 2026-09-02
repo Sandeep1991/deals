@@ -6,6 +6,7 @@ export interface Ad {
   keywords: string;
   price: string;
   url: string;
+  merchant?: string;
 }
 
 export interface Message {

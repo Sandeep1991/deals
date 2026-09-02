@@ -1,0 +1,504 @@
+{
+  "ads": [
+    {
+      "id": "kroger-101",
+      "title": "Private Selection Angus 80% Lean Ground Chuck",
+      "description": "16 oz package. Weekly ad deal valid Wed Sep 2 – Tue Sep 8, 2026. With Card.",
+      "category": "meat",
+      "keywords": "ground beef,ground chuck,angus,meat,protein,weekly deal,discount",
+      "price": "$4.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-102",
+      "title": "Boneless Ribeye Steaks Family Pack",
+      "description": "USDA Choice boneless ribeye steaks, family pack. With Card weekly deal.",
+      "category": "meat",
+      "keywords": "ribeye,steak,beef,grilling,meat,family pack,weekly deal",
+      "price": "$11.99/lb",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-103",
+      "title": "Pork Back Ribs or Fresh Tyson Boneless Chicken Breasts",
+      "description": "Bone-in pork back ribs or Tyson boneless chicken breasts. With Card.",
+      "category": "meat",
+      "keywords": "pork ribs,chicken breast,tyson,grilling,meat,weekly deal",
+      "price": "$2.99/lb",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-104",
+      "title": "California Seedless Grapes",
+      "description": "Red, green, or black seedless grapes. With Card weekly produce deal.",
+      "category": "produce",
+      "keywords": "grapes,fruit,produce,seedless,fresh,weekly deal",
+      "price": "$1.99/lb",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-105",
+      "title": "Yellow or White Peaches or Nectarines",
+      "description": "Fresh peaches or nectarines. With Card weekly produce deal.",
+      "category": "produce",
+      "keywords": "peaches,nectarines,fruit,produce,fresh,weekly deal",
+      "price": "$1.99/lb",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-106",
+      "title": "Jumbo Blueberries",
+      "description": "9.8 oz package jumbo blueberries. With Card.",
+      "category": "produce",
+      "keywords": "blueberries,berries,fruit,produce,fresh,weekly deal",
+      "price": "$4.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-107",
+      "title": "Coca-Cola, Pepsi or 7UP 12-Pack Buy 2 Get 3 FREE",
+      "description": "Select varieties, 12-pack 12 fl oz cans. Buy 2 get 3 free of equal or lesser value. Limit 10 packages. With Card.",
+      "category": "beverages",
+      "keywords": "soda,coca-cola,pepsi,7up,soft drink,bogo,deal,discount,weekly deal",
+      "price": "Buy 2 Get 3 FREE",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-108",
+      "title": "Doritos, Cheetos or Ruffles Buy 2 Get 3 FREE",
+      "description": "Doritos 9-10.75 oz, Cheetos 6.5-9 oz, or Ruffles 7.25-10.25 oz. Select varieties. Buy 2 get 3 free. With Card.",
+      "category": "snacks",
+      "keywords": "chips,doritos,cheetos,ruffles,snacks,bogo,deal,discount,weekly deal",
+      "price": "Buy 2 Get 3 FREE",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-109",
+      "title": "Kroger Ice Cream",
+      "description": "Select varieties, 48 fl oz. With Card weekly grocery deal.",
+      "category": "frozen",
+      "keywords": "ice cream,dessert,frozen,kroger brand,weekly deal",
+      "price": "$2.00",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-110",
+      "title": "Kroger Sour Cream, Cottage Cheese or Dip",
+      "description": "Select varieties, 16 oz. With Card.",
+      "category": "dairy",
+      "keywords": "sour cream,cottage cheese,dip,dairy,kroger brand,weekly deal",
+      "price": "$1.69",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-111",
+      "title": "Kroger Butter 2-Pack",
+      "description": "Select varieties, 2-pack. New everyday price (was $6.49).",
+      "category": "dairy",
+      "keywords": "butter,dairy,kroger brand,everyday price,weekly deal",
+      "price": "$5.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-112",
+      "title": "Creamette Pasta or StarKist Tuna",
+      "description": "Creamette pasta 12-16 oz or StarKist tuna 5 oz can. Select varieties. With Card.",
+      "category": "pantry",
+      "keywords": "pasta,tuna,starkist,creamette,pantry,weekly deal,discount",
+      "price": "99¢",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-113",
+      "title": "Powerade or BodyArmor",
+      "description": "Powerade 28 fl oz or BodyArmor 16 fl oz. Select varieties. With Card.",
+      "category": "beverages",
+      "keywords": "sports drink,powerade,bodyarmor,beverage,weekly deal",
+      "price": "88¢",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-114",
+      "title": "Bud, Miller or Coors Beer 24-Pack",
+      "description": "Select varieties, 24-pack 12 fl oz cans.",
+      "category": "beverages",
+      "keywords": "beer,bud,miller,coors,alcohol,beverage,weekly deal",
+      "price": "$18.29",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-115",
+      "title": "Johnsonville Dinner or Breakfast Sausage",
+      "description": "Dinner sausage 12-19 oz or breakfast sausage 9.6-12 oz. Select varieties. With digital coupon.",
+      "category": "meat",
+      "keywords": "sausage,johnsonville,breakfast,dinner,meat,digital coupon,weekly deal",
+      "price": "$3.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-116",
+      "title": "Whole Seedless Watermelon",
+      "description": "Whole seedless watermelon. With digital coupon.",
+      "category": "produce",
+      "keywords": "watermelon,fruit,produce,seedless,digital coupon,weekly deal",
+      "price": "$3.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-117",
+      "title": "Gatorade 12-Pack or Nestlé Drumstick",
+      "description": "Gatorade 12-pack 12 fl oz or Nestlé Drumstick 8-20 ct. Select varieties. With digital coupon.",
+      "category": "beverages",
+      "keywords": "gatorade,drumstick,ice cream,sports drink,digital coupon,weekly deal",
+      "price": "$5.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-118",
+      "title": "Lay's, Kettle Cooked Chips or Tostitos",
+      "description": "Lay's 5-8 oz or Tostitos Cantina chips 9-13 oz. Select varieties. With digital coupon.",
+      "category": "snacks",
+      "keywords": "chips,lays,tostitos,snacks,digital coupon,weekly deal,discount",
+      "price": "$1.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-119",
+      "title": "Oscar Mayer Bacon",
+      "description": "Select varieties, 12-16 oz. With digital coupon (regular up to $6.99).",
+      "category": "meat",
+      "keywords": "bacon,oscar mayer,breakfast,meat,digital coupon,weekly deal",
+      "price": "$4.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-120",
+      "title": "Nabisco Snack Crackers or Ritz",
+      "description": "Nabisco family size snack crackers 11.5-14 oz or Ritz 17.4-20.8 oz. Select varieties. With digital coupon.",
+      "category": "snacks",
+      "keywords": "crackers,ritz,nabisco,wheat thins,snacks,digital coupon,weekly deal",
+      "price": "$3.49",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-121",
+      "title": "Nabisco Oreo or Chips Ahoy Cookies",
+      "description": "Family size Oreo or Chips Ahoy, 7.14-20 oz. Select varieties. With digital coupon.",
+      "category": "snacks",
+      "keywords": "cookies,oreo,chips ahoy,nabisco,dessert,digital coupon,weekly deal",
+      "price": "$3.49",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-122",
+      "title": "Ore-Ida Frozen Potatoes or Häagen-Dazs Ice Cream",
+      "description": "Ore-Ida frozen potatoes or Häagen-Dazs ice cream 14 fl oz. Select varieties. With digital coupon.",
+      "category": "frozen",
+      "keywords": "frozen fries,ice cream,haagen dazs,ore-ida,frozen,digital coupon,weekly deal",
+      "price": "$2.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-123",
+      "title": "DiGiorno Pizza or Hot Pockets",
+      "description": "DiGiorno pizza 14.14-30.3 oz or Hot Pockets 4 ct. Select varieties. With digital coupon.",
+      "category": "frozen",
+      "keywords": "pizza,digiorno,hot pockets,frozen,digital coupon,weekly deal",
+      "price": "$3.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-124",
+      "title": "Kellogg's Large Size Cereal",
+      "description": "Select varieties, 12-20.9 oz. With digital coupon (regular up to $3.99).",
+      "category": "breakfast",
+      "keywords": "cereal,kelloggs,frosted flakes,breakfast,digital coupon,weekly deal",
+      "price": "$2.49",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-125",
+      "title": "Hellmann's Mayonnaise",
+      "description": "Select varieties, 20-30 fl oz. With digital coupon (regular up to $6.49).",
+      "category": "pantry",
+      "keywords": "mayonnaise,hellmanns,condiment,pantry,digital coupon,weekly deal",
+      "price": "$4.49",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-126",
+      "title": "Kingsford Charcoal",
+      "description": "Original or Match Light, select varieties, 12-16 lb. With digital coupon.",
+      "category": "household",
+      "keywords": "charcoal,kingsford,grilling,bbq,household,digital coupon,weekly deal",
+      "price": "$8.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-127",
+      "title": "Kroger Cheese 8 oz",
+      "description": "Select varieties including Mexican Style Blend shredded. New everyday price (was $2.49).",
+      "category": "dairy",
+      "keywords": "cheese,shredded cheese,dairy,kroger brand,everyday price",
+      "price": "$1.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-128",
+      "title": "Kroger Bread 20 oz",
+      "description": "Select varieties including Classic White. New everyday price (was $1.99).",
+      "category": "bakery",
+      "keywords": "bread,white bread,bakery,kroger brand,everyday price",
+      "price": "$1.79",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-129",
+      "title": "Butterball Turkey Bacon",
+      "description": "Select varieties, 12 oz. New everyday price (was $4.99).",
+      "category": "meat",
+      "keywords": "turkey bacon,bacon,butterball,breakfast,meat",
+      "price": "$4.39",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-130",
+      "title": "Fresh Lemons",
+      "description": "Fresh whole lemons. New everyday price (was 85¢).",
+      "category": "produce",
+      "keywords": "lemons,citrus,fruit,produce,fresh",
+      "price": "66¢ each",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-131",
+      "title": "Fresh Baked Cookies 12 ct",
+      "description": "Select varieties in the bakery. New everyday price (was $3.99).",
+      "category": "bakery",
+      "keywords": "cookies,bakery,chocolate chip,dessert,fresh baked",
+      "price": "$3.00",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-132",
+      "title": "Yellow Squash or Zucchini",
+      "description": "Fresh yellow squash or zucchini. New everyday price (was $2.99/lb).",
+      "category": "produce",
+      "keywords": "squash,zucchini,vegetables,produce,fresh",
+      "price": "$1.59/lb",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-133",
+      "title": "Schweid & Sons Burger Patties",
+      "description": "Select varieties, 1.32-1.33 lb. Game day deal. With Card.",
+      "category": "meat",
+      "keywords": "burger,patties,beef,grilling,gameday,meat,weekly deal",
+      "price": "$10.00",
+      "url": "https://www.kroger.com/GameDay",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-134",
+      "title": "Kraft Shredded Cheese",
+      "description": "Select varieties, 7-8 oz. With Card game day deal.",
+      "category": "dairy",
+      "keywords": "cheese,kraft,shredded,dairy,gameday,weekly deal",
+      "price": "$2.49",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-135",
+      "title": "Big K Soda 2 Liter",
+      "description": "Select varieties, 2 liter bottle. New everyday price (was $1.25).",
+      "category": "beverages",
+      "keywords": "soda,big k,cola,soft drink,beverage,everyday price",
+      "price": "$1.00",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-136",
+      "title": "Home Chef St. Louis Style Ribs",
+      "description": "Fully cooked, 2 lb, in the deli. With Card.",
+      "category": "deli",
+      "keywords": "ribs,home chef,bbq,deli,gameday,weekly deal",
+      "price": "$13.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-137",
+      "title": "Kettle Brand Potato Chips",
+      "description": "Select varieties, 6-7.5 oz. With Card.",
+      "category": "snacks",
+      "keywords": "chips,kettle brand,snacks,gameday,weekly deal",
+      "price": "$3.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-138",
+      "title": "Bush's Best Baked or Grillin' Beans",
+      "description": "Select varieties, 22-28 oz. With Card.",
+      "category": "pantry",
+      "keywords": "baked beans,bushs,pantry,bbq,gameday,weekly deal",
+      "price": "$2.49",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-139",
+      "title": "Kroger Ultra Paper Towels 6 Double Rolls",
+      "description": "6 double rolls. With Card.",
+      "category": "household",
+      "keywords": "paper towels,household,cleaning,kroger brand,weekly deal",
+      "price": "$5.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-140",
+      "title": "Kroger 80% Lean Ground Beef Big Pack",
+      "description": "3 lb total weight big pack. Everyday low club-style price.",
+      "category": "meat",
+      "keywords": "ground beef,big pack,meat,bulk,kroger brand,everyday price",
+      "price": "$20.00",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-141",
+      "title": "Kroger Bath Tissue 30 Mega Rolls",
+      "description": "Soft & Strong bath tissue, 30 mega rolls. With Card big pack deal.",
+      "category": "household",
+      "keywords": "toilet paper,bath tissue,household,big pack,kroger brand,weekly deal",
+      "price": "$19.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-142",
+      "title": "Private Selection Autumn Crisp or Holiday Grapes",
+      "description": "Select varieties, 2 lb package. With Card.",
+      "category": "produce",
+      "keywords": "grapes,private selection,fruit,produce,fresh,weekly deal",
+      "price": "$5.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-143",
+      "title": "Simple Truth Organic Seedless Grapes",
+      "description": "Organic red, green, or black seedless grapes, 2 lb package. With Card.",
+      "category": "produce",
+      "keywords": "grapes,organic,simple truth,fruit,produce,weekly deal",
+      "price": "$5.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-144",
+      "title": "Grapery Specialty Grapes",
+      "description": "Cotton Candy, Gum Drops, or Moon Drops specialty grapes. With Card.",
+      "category": "produce",
+      "keywords": "specialty grapes,cotton candy grapes,fruit,produce,weekly deal",
+      "price": "$3.99/lb",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-145",
+      "title": "Fresh Heritage Farm Chicken Drumsticks",
+      "description": "Bone-in chicken drumsticks. Also boneless chicken tenders $2.99/lb. With Card.",
+      "category": "meat",
+      "keywords": "chicken,drumsticks,poultry,meat,fresh,weekly deal",
+      "price": "99¢/lb",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-146",
+      "title": "Fresh Atlantic Salmon Whole Fillet",
+      "description": "Farm-raised Atlantic salmon whole fillet. With Card.",
+      "category": "seafood",
+      "keywords": "salmon,fish,seafood,fresh,weekly deal",
+      "price": "$8.99/lb",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-147",
+      "title": "Kroger Extra Large Cooked Shrimp",
+      "description": "26-30 ct cooked shrimp, 2 lb bag ($8.99/lb). With Card.",
+      "category": "seafood",
+      "keywords": "shrimp,seafood,cooked shrimp,kroger brand,weekly deal",
+      "price": "$17.98",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-148",
+      "title": "Home Chef Fried or Baked Chicken 8-Piece",
+      "description": "Fully cooked 8-piece chicken: 2 breasts, 2 thighs, 2 wings, 2 drumsticks. With Card.",
+      "category": "deli",
+      "keywords": "fried chicken,baked chicken,home chef,deli,rotisserie,weekly deal",
+      "price": "$8.99",
+      "url": "https://www.kroger.com/fresh",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-149",
+      "title": "Private Selection Pumpkin Cake Roll or Cheesecake",
+      "description": "Pumpkin cake roll 18 oz or 6-inch cheesecake. With Card bakery deal.",
+      "category": "bakery",
+      "keywords": "cake,cheesecake,pumpkin,dessert,bakery,weekly deal",
+      "price": "$7.99",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-150",
+      "title": "Raspberries or Blackberries 6 oz",
+      "description": "6 oz package raspberries or blackberries. Mix & match 2 for $5. With Card.",
+      "category": "produce",
+      "keywords": "raspberries,blackberries,berries,fruit,produce,weekly deal",
+      "price": "2 for $5",
+      "url": "https://www.kroger.com/",
+      "merchant": "Kroger"
+    }
+  ]
+}
