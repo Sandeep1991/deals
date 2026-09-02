@@ -1,6 +1,12 @@
 import type { Ad } from "./types";
 
-const API_URL = import.meta.env.VITE_API_URL?.replace(/\/$/, "") ?? "";
+const PRODUCTION_API_URL =
+  "https://deals-backend-h0czfaf0c0cjbmh5.canadacentral-01.azurewebsites.net";
+
+const API_URL = (
+  import.meta.env.VITE_API_URL?.replace(/\/$/, "") ||
+  (import.meta.env.PROD ? PRODUCTION_API_URL : "")
+).replace(/\/$/, "");
 
 export class ApiError extends Error {
   status?: number;

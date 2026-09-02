@@ -43,10 +43,15 @@ export default function App() {
           setApiReady(false);
           setStatusText("API online — search not configured");
         }
-      } catch {
+      } catch (error) {
         if (cancelled) return;
         setApiReady(false);
-        setStatusText("API offline");
+        if (error instanceof ApiError && error.message.includes("not configured")) {
+          setStatusText("API URL not configured");
+        } else {
+          setStatusText("API offline");
+        }
+        console.error("Health check failed:", error);
       }
     }
 
