@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { loadAds } from "./ads";
-import { buildAssistantReply, hybridSearch } from "./search";
-import type { Ad, Message } from "./types";
+import { ApiError, fetchChat, fetchHealth } from "./api";
+import type { Message } from "./types";
 import { AdCard } from "./components/AdCard";
 import { ChatInput } from "./components/ChatInput";
 import { MessageBubble } from "./components/MessageBubble";
@@ -20,14 +19,42 @@ function uid() {
 
 export default function App() {
   const [messages, setMessages] = useState<Message[]>([WELCOME]);
-  const [ads] = useState<Ad[]>(() => loadAds());
   const [loading, setLoading] = useState(false);
-  const adsLoaded = true;
+  const [apiReady, setApiReady] = useState(false);
+  const [statusText, setStatusText] = useState("Connecting to API…");
   const bottomRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [messages, loading]);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function checkHealth() {
+      try {
+        const health = await fetchHealth();
+        if (cancelled) return;
+
+        if (health.search_configured) {
+          setApiReady(true);
+          setStatusText("Search ready");
+        } else {
+          setApiReady(false);
+          setStatusText("API online — search not configured");
+        }
+      } catch {
+        if (cancelled) return;
+        setApiReady(false);
+        setStatusText("API offline");
+      }
+    }
+
+    checkHealth();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const handleSend = async (text: string) => {
     const trimmed = text.trim();
@@ -43,19 +70,36 @@ export default function App() {
     setMessages((prev) => [...prev, userMsg]);
     setLoading(true);
 
-    await new Promise((r) => setTimeout(r, 400));
+    try {
+      const { reply, ads } = await fetchChat(trimmed);
+      const assistantMsg: Message = {
+        id: uid(),
+        role: "assistant",
+        content: reply,
+        ads,
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, assistantMsg]);
+      setApiReady(true);
+      setStatusText("Search ready");
+    } catch (error) {
+      const detail =
+        error instanceof ApiError
+          ? error.message
+          : "Something went wrong while searching. Please try again.";
 
-    const results = hybridSearch(ads, trimmed);
-    const assistantMsg: Message = {
-      id: uid(),
-      role: "assistant",
-      content: buildAssistantReply(trimmed, results),
-      ads: results.map((r) => r.ad),
-      timestamp: new Date(),
-    };
-
-    setMessages((prev) => [...prev, assistantMsg]);
-    setLoading(false);
+      const assistantMsg: Message = {
+        id: uid(),
+        role: "assistant",
+        content: `Sorry, I couldn't reach the deals API. ${detail}`,
+        timestamp: new Date(),
+      };
+      setMessages((prev) => [...prev, assistantMsg]);
+      setApiReady(false);
+      setStatusText("API offline");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -70,8 +114,8 @@ export default function App() {
             </div>
           </div>
           <div className="status">
-            <span className={`status-dot ${adsLoaded ? "online" : ""}`} />
-            {adsLoaded ? `${ads.length} deals indexed` : "Loading deals…"}
+            <span className={`status-dot ${apiReady ? "online" : ""}`} />
+            {statusText}
           </div>
         </div>
       </header>
@@ -119,7 +163,7 @@ export default function App() {
               </button>
             ))}
           </div>
-          <ChatInput onSend={handleSend} disabled={loading || !adsLoaded} />
+          <ChatInput onSend={handleSend} disabled={loading} />
         </div>
       </main>
     </div>
