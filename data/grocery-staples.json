@@ -1,0 +1,364 @@
+{
+  "ads": [
+    {
+      "id": "kroger-g01",
+      "title": "Jif Creamy Peanut Butter 16 oz",
+      "description": "Creamy peanut butter, 16 oz jar. Pantry staple.",
+      "category": "pantry",
+      "keywords": "peanut butter,jif,spread,pantry,sandwich,pbj",
+      "price": "$3.49",
+      "url": "https://www.kroger.com/search?q=peanut+butter",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g02",
+      "title": "Smucker's Concord Grape Jelly 18 oz",
+      "description": "Concord grape jelly, 18 oz jar.",
+      "category": "pantry",
+      "keywords": "jelly,grape jelly,smuckers,spread,pantry,pbj",
+      "price": "$2.99",
+      "url": "https://www.kroger.com/search?q=grape+jelly",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g03",
+      "title": "Kroger Vitamin D Whole Milk 1 Gallon",
+      "description": "Whole milk, 1 gallon.",
+      "category": "dairy",
+      "keywords": "milk,whole milk,dairy,gallon,milkshake",
+      "price": "$3.79",
+      "url": "https://www.kroger.com/search?q=whole+milk+gallon",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g04",
+      "title": "Hershey's Chocolate Syrup 24 oz",
+      "description": "Chocolate flavored syrup for milk and desserts.",
+      "category": "pantry",
+      "keywords": "hershey,chocolate syrup,milkshake,dessert,pantry",
+      "price": "$3.29",
+      "url": "https://www.kroger.com/search?q=hershey+chocolate+syrup",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g05",
+      "title": "Old El Paso Hard Taco Shells 12 ct",
+      "description": "Crunchy taco shells, 12 count box.",
+      "category": "pantry",
+      "keywords": "taco shells,tacos,old el paso,mexican,pantry",
+      "price": "$2.49",
+      "url": "https://www.kroger.com/search?q=taco+shells",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g06",
+      "title": "Bush's Best Black Beans 15 oz",
+      "description": "Canned black beans, 15 oz.",
+      "category": "pantry",
+      "keywords": "black beans,canned beans,bushs,pantry,tacos,veggie",
+      "price": "$1.29",
+      "url": "https://www.kroger.com/search?q=black+beans",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g07",
+      "title": "Fresh Bell Peppers",
+      "description": "Red, yellow, or green bell peppers. Sold by the pound.",
+      "category": "produce",
+      "keywords": "bell peppers,peppers,produce,fresh,tacos,veggie",
+      "price": "$1.99/lb",
+      "url": "https://www.kroger.com/search?q=bell+peppers",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g08",
+      "title": "Del Monte Whole Kernel Corn 15.25 oz",
+      "description": "Canned whole kernel corn.",
+      "category": "pantry",
+      "keywords": "corn,canned corn,del monte,pantry,tacos",
+      "price": "$1.49",
+      "url": "https://www.kroger.com/search?q=canned+corn",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g09",
+      "title": "Iceberg Lettuce",
+      "description": "Fresh iceberg lettuce head.",
+      "category": "produce",
+      "keywords": "lettuce,iceberg,produce,fresh,tacos,salad",
+      "price": "$1.99",
+      "url": "https://www.kroger.com/search?q=iceberg+lettuce",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g10",
+      "title": "Roma Tomatoes",
+      "description": "Fresh roma tomatoes. Sold by the pound.",
+      "category": "produce",
+      "keywords": "tomatoes,roma,produce,fresh,tacos",
+      "price": "$1.49/lb",
+      "url": "https://www.kroger.com/search?q=roma+tomatoes",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g11",
+      "title": "Kroger Shredded Cheddar Cheese 8 oz",
+      "description": "Mild cheddar shredded cheese, 8 oz bag.",
+      "category": "dairy",
+      "keywords": "cheddar cheese,shredded cheese,dairy,tacos,cheese",
+      "price": "$2.49",
+      "url": "https://www.kroger.com/search?q=shredded+cheddar+cheese",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g12",
+      "title": "Fresh Cilantro Bunch",
+      "description": "Fresh cilantro bunch, produce department.",
+      "category": "produce",
+      "keywords": "cilantro,herbs,produce,fresh,tacos,mexican",
+      "price": "$0.99",
+      "url": "https://www.kroger.com/search?q=cilantro",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g13",
+      "title": "Jarritos Mandarin Soda 12.5 oz",
+      "description": "Mexican mandarin flavored soda, glass bottle.",
+      "category": "beverages",
+      "keywords": "jarritos,soda,mandarin,mexican,beverage,taco",
+      "price": "$1.49",
+      "url": "https://www.kroger.com/search?q=jarritos",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g14",
+      "title": "Old El Paso Taco Seasoning Mix",
+      "description": "Taco seasoning mix packet, 1 oz.",
+      "category": "pantry",
+      "keywords": "taco seasoning,seasoning,old el paso,mexican,pantry",
+      "price": "$1.19",
+      "url": "https://www.kroger.com/search?q=taco+seasoning",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g15",
+      "title": "Mission Flour Tortillas 10 ct",
+      "description": "Soft flour tortillas, 10 count.",
+      "category": "pantry",
+      "keywords": "tortillas,flour tortillas,mission,mexican,pantry,tacos",
+      "price": "$2.99",
+      "url": "https://www.kroger.com/search?q=flour+tortillas",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g16",
+      "title": "Old El Paso Refried Beans 16 oz",
+      "description": "Traditional refried beans, 16 oz can.",
+      "category": "pantry",
+      "keywords": "refried beans,beans,canned beans,old el paso,mexican,tacos",
+      "price": "$1.49",
+      "url": "https://www.kroger.com/search?q=refried+beans",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g17",
+      "title": "Yellow Onions 3 lb Bag",
+      "description": "Yellow cooking onions, 3 lb bag.",
+      "category": "produce",
+      "keywords": "onions,yellow onions,produce,fresh,tacos,cooking",
+      "price": "$2.49",
+      "url": "https://www.kroger.com/search?q=yellow+onions",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "kroger-g18",
+      "title": "Kroger Chocolate Ice Cream 48 fl oz",
+      "description": "Chocolate ice cream, 48 fl oz tub.",
+      "category": "frozen",
+      "keywords": "chocolate ice cream,ice cream,frozen,dessert,milkshake",
+      "price": "$2.97",
+      "url": "https://www.kroger.com/search?q=chocolate+ice+cream",
+      "merchant": "Kroger"
+    },
+    {
+      "id": "walmart-g01",
+      "title": "Great Value Creamy Peanut Butter 16 oz",
+      "description": "Creamy peanut butter, 16 oz jar.",
+      "category": "pantry",
+      "keywords": "peanut butter,great value,spread,pantry,sandwich,pbj",
+      "price": "$2.78",
+      "url": "https://www.walmart.com/search?q=peanut+butter",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g02",
+      "title": "Great Value Concord Grape Jelly 18 oz",
+      "description": "Concord grape jelly, 18 oz jar.",
+      "category": "pantry",
+      "keywords": "jelly,grape jelly,great value,spread,pantry,pbj",
+      "price": "$2.48",
+      "url": "https://www.walmart.com/search?q=grape+jelly",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g03",
+      "title": "Great Value Whole Milk 1 Gallon",
+      "description": "Whole milk, 1 gallon.",
+      "category": "dairy",
+      "keywords": "milk,whole milk,great value,dairy,gallon,milkshake",
+      "price": "$3.48",
+      "url": "https://www.walmart.com/search?q=whole+milk+gallon",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g04",
+      "title": "Hershey's Chocolate Syrup 24 oz",
+      "description": "Chocolate flavored syrup for milk and desserts.",
+      "category": "pantry",
+      "keywords": "hershey,chocolate syrup,milkshake,dessert,pantry",
+      "price": "$3.18",
+      "url": "https://www.walmart.com/search?q=hershey+chocolate+syrup",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g05",
+      "title": "Great Value Crunchy Taco Shells 12 ct",
+      "description": "Hard taco shells, 12 count box.",
+      "category": "pantry",
+      "keywords": "taco shells,tacos,great value,mexican,pantry",
+      "price": "$1.98",
+      "url": "https://www.walmart.com/search?q=taco+shells",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g06",
+      "title": "Great Value Black Beans 15 oz",
+      "description": "Canned black beans, 15 oz.",
+      "category": "pantry",
+      "keywords": "black beans,canned beans,great value,pantry,tacos,veggie",
+      "price": "$0.78",
+      "url": "https://www.walmart.com/search?q=black+beans",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g07",
+      "title": "Fresh Bell Peppers",
+      "description": "Red, yellow, or green bell peppers. Sold by the pound.",
+      "category": "produce",
+      "keywords": "bell peppers,peppers,produce,fresh,tacos,veggie",
+      "price": "$1.78/lb",
+      "url": "https://www.walmart.com/search?q=bell+peppers",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g08",
+      "title": "Great Value Whole Kernel Corn 15.25 oz",
+      "description": "Canned whole kernel corn.",
+      "category": "pantry",
+      "keywords": "corn,canned corn,great value,pantry,tacos",
+      "price": "$0.64",
+      "url": "https://www.walmart.com/search?q=canned+corn",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g09",
+      "title": "Fresh Iceberg Lettuce",
+      "description": "Fresh iceberg lettuce head.",
+      "category": "produce",
+      "keywords": "lettuce,iceberg,produce,fresh,tacos,salad",
+      "price": "$1.88",
+      "url": "https://www.walmart.com/search?q=iceberg+lettuce",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g10",
+      "title": "Fresh Roma Tomatoes",
+      "description": "Fresh roma tomatoes. Sold by the pound.",
+      "category": "produce",
+      "keywords": "tomatoes,roma,produce,fresh,tacos",
+      "price": "$1.38/lb",
+      "url": "https://www.walmart.com/search?q=roma+tomatoes",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g11",
+      "title": "Great Value Shredded Mild Cheddar Cheese 8 oz",
+      "description": "Mild cheddar shredded cheese, 8 oz bag.",
+      "category": "dairy",
+      "keywords": "cheddar cheese,shredded cheese,great value,dairy,tacos,cheese",
+      "price": "$2.22",
+      "url": "https://www.walmart.com/search?q=shredded+cheddar+cheese",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g12",
+      "title": "Fresh Cilantro Bunch",
+      "description": "Fresh cilantro bunch, produce department.",
+      "category": "produce",
+      "keywords": "cilantro,herbs,produce,fresh,tacos,mexican",
+      "price": "$0.88",
+      "url": "https://www.walmart.com/search?q=cilantro",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g13",
+      "title": "Jarritos Mandarin Soda 12.5 oz",
+      "description": "Mexican mandarin flavored soda, glass bottle.",
+      "category": "beverages",
+      "keywords": "jarritos,soda,mandarin,mexican,beverage,taco",
+      "price": "$1.38",
+      "url": "https://www.walmart.com/search?q=jarritos",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g14",
+      "title": "Great Value Taco Seasoning Mix",
+      "description": "Taco seasoning mix packet, 1 oz.",
+      "category": "pantry",
+      "keywords": "taco seasoning,seasoning,great value,mexican,pantry",
+      "price": "$0.88",
+      "url": "https://www.walmart.com/search?q=taco+seasoning",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g15",
+      "title": "Mission Flour Tortillas 10 ct",
+      "description": "Soft flour tortillas, 10 count.",
+      "category": "pantry",
+      "keywords": "tortillas,flour tortillas,mission,mexican,pantry,tacos",
+      "price": "$2.88",
+      "url": "https://www.walmart.com/search?q=flour+tortillas",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g16",
+      "title": "Old El Paso Refried Beans 16 oz",
+      "description": "Traditional refried beans, 16 oz can.",
+      "category": "pantry",
+      "keywords": "refried beans,beans,canned beans,old el paso,mexican,tacos",
+      "price": "$1.38",
+      "url": "https://www.walmart.com/search?q=refried+beans",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g17",
+      "title": "Yellow Onions 3 lb Bag",
+      "description": "Yellow cooking onions, 3 lb bag.",
+      "category": "produce",
+      "keywords": "onions,yellow onions,produce,fresh,tacos,cooking",
+      "price": "$2.24",
+      "url": "https://www.walmart.com/search?q=yellow+onions",
+      "merchant": "Walmart"
+    },
+    {
+      "id": "walmart-g18",
+      "title": "Great Value Chocolate Ice Cream 48 fl oz",
+      "description": "Chocolate ice cream, 48 fl oz tub.",
+      "category": "frozen",
+      "keywords": "chocolate ice cream,ice cream,frozen,dessert,milkshake",
+      "price": "$2.97",
+      "url": "https://www.walmart.com/search?q=chocolate+ice+cream",
+      "merchant": "Walmart"
+    }
+  ]
+}

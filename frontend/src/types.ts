@@ -23,6 +23,9 @@ export interface MerchantBasket {
   quotes: ProductQuote[];
   alternative_label?: string | null;
   subtotal?: number | null;
+  subtotal_is_partial?: boolean;
+  priced_items?: number;
+  total_items?: number;
 }
 
 export interface CompareResponse {

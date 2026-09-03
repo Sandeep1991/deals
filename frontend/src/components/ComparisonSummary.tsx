@@ -42,7 +42,9 @@ export function ComparisonSummary({ comparison }: Props) {
             </ul>
             <p className="comparison-total">
               {basket.subtotal != null
-                ? `Est. total: $${basket.subtotal.toFixed(2)}`
+                ? basket.subtotal_is_partial
+                  ? `Est. total: $${basket.subtotal.toFixed(2)} (${basket.priced_items ?? "?"}/${basket.total_items ?? "?"} items priced)`
+                  : `Est. total: $${basket.subtotal.toFixed(2)}`
                 : "Est. total: see item prices"}
             </p>
           </div>
