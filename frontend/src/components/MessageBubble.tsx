@@ -5,14 +5,16 @@ interface Props {
 }
 
 function formatInline(text: string) {
+  // Affilliate deep links include long query strings; stop at the closing ")" of the
+  // markdown link by requiring the URL to start with http(s) and allowing "&" etc.
   return text
-    .split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g)
+    .split(/(\*\*[^*]+\*\*|\[[^\]]+\]\(https?:\/\/[^)\s]+\))/g)
     .map((part, i) => {
       if (part.startsWith("**") && part.endsWith("**")) {
         return <strong key={i}>{part.slice(2, -2)}</strong>;
       }
 
-      const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+      const linkMatch = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)$/);
       if (linkMatch) {
         return (
           <a
