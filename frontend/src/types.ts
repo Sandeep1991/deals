@@ -47,6 +47,11 @@ export interface Message {
   timestamp: Date;
 }
 
+export interface ChatHistoryTurn {
+  role: "user" | "assistant";
+  content: string;
+}
+
 export interface SearchResult {
   ad: Ad;
   score: number;
