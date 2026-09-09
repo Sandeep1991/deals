@@ -35,7 +35,18 @@ export function ComparisonSummary({ comparison }: Props) {
             <ul>
               {basket.quotes.map((quote) => (
                 <li key={`${basket.merchant}-${quote.item_name}`}>
-                  <span>{quote.item_name}</span>
+                  {quote.ad.url ? (
+                    <a
+                      href={quote.ad.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-link"
+                    >
+                      {quote.item_name}
+                    </a>
+                  ) : (
+                    <span>{quote.item_name}</span>
+                  )}
                   <span>{quote.ad.price}</span>
                 </li>
               ))}
