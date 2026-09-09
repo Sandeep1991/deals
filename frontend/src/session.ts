@@ -176,4 +176,27 @@ export function persistMessages(chatId: string, messages: Message[]): ChatSessio
   return session;
 }
 
+/** Reset one chat to the welcome message (keeps the same chatId). */
+export function clearSessionHistory(chatId: string): ChatSession {
+  const session: ChatSession = {
+    chatId,
+    title: "New chat",
+    updatedAt: new Date().toISOString(),
+    messages: [createWelcomeMessage()],
+  };
+  saveSession(session);
+  return session;
+}
+
+/** Wipe all stored chats from the browser and start a fresh UUID session. */
+export function clearAllSessionHistory(): ChatSession {
+  try {
+    localStorage.removeItem(CHATS_KEY);
+    localStorage.removeItem(ACTIVE_KEY);
+  } catch {
+    // ignore quota / private-mode errors
+  }
+  return createSession();
+}
+
 export type { CompareResponse };

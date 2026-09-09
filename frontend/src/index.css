@@ -114,6 +114,15 @@ body {
   cursor: not-allowed;
 }
 
+.clear-history-btn {
+  color: var(--text-muted);
+}
+
+.clear-history-btn:hover:not(:disabled) {
+  border-color: #c45c5c;
+  color: #e07a7a;
+}
+
 .status-dot {
   width: 8px;
   height: 8px;

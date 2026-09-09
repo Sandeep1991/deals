@@ -6,6 +6,7 @@ import { ChatInput } from "./components/ChatInput";
 import { ComparisonSummary } from "./components/ComparisonSummary";
 import { MessageBubble } from "./components/MessageBubble";
 import {
+  clearSessionHistory,
   createSession,
   historyForApi,
   loadOrCreateSession,
@@ -79,6 +80,12 @@ export default function App() {
     if (loading) return;
     const session = createSession();
     setChatId(session.chatId);
+    setMessages(session.messages);
+  };
+
+  const handleClearHistory = () => {
+    if (loading) return;
+    const session = clearSessionHistory(chatId);
     setMessages(session.messages);
   };
 
@@ -158,6 +165,15 @@ export default function App() {
               title="Start a new chat"
             >
               New chat
+            </button>
+            <button
+              type="button"
+              className="new-chat-btn clear-history-btn"
+              onClick={handleClearHistory}
+              disabled={loading}
+              title="Clear this chat’s saved history"
+            >
+              Clear history
             </button>
             <div className="status" title={`Chat ${chatId}`}>
               <span className={`status-dot ${apiReady ? "online" : ""}`} />
