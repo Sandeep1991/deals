@@ -1,4 +1,4 @@
-import type { Ad, ChatHistoryTurn, CompareResponse } from "./types";
+import type { Ad, ChatHistoryTurn, CompareResponse, PreferenceSummary } from "./types";
 
 const PRODUCTION_API_URL =
   "https://deals-backend-h0czfaf0c0cjbmh5.canadacentral-01.azurewebsites.net";
@@ -33,6 +33,7 @@ export interface ChatResponse {
   mode?: string;
   comparison?: CompareResponse;
   chat_id?: string | null;
+  preference_summary?: PreferenceSummary | null;
 }
 
 export interface ChatRequestBody {
@@ -41,6 +42,7 @@ export interface ChatRequestBody {
   mode?: string;
   chat_id?: string;
   messages?: ChatHistoryTurn[];
+  preference_summary?: PreferenceSummary | null;
 }
 
 function ensureApiUrl(): string {
@@ -63,7 +65,13 @@ export async function fetchHealth(): Promise<HealthResponse> {
 
 export async function fetchChat(
   query: string,
-  options?: { limit?: number; chatId?: string; messages?: ChatHistoryTurn[]; mode?: string }
+  options?: {
+    limit?: number;
+    chatId?: string;
+    messages?: ChatHistoryTurn[];
+    mode?: string;
+    preferenceSummary?: PreferenceSummary | null;
+  }
 ): Promise<ChatResponse> {
   const base = ensureApiUrl();
   const body: ChatRequestBody = {
@@ -73,6 +81,7 @@ export async function fetchChat(
   if (options?.mode) body.mode = options.mode;
   if (options?.chatId) body.chat_id = options.chatId;
   if (options?.messages?.length) body.messages = options.messages;
+  if (options?.preferenceSummary) body.preference_summary = options.preferenceSummary;
 
   const response = await fetch(`${base}/api/chat`, {
     method: "POST",

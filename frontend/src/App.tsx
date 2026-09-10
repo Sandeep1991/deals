@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { ApiError, fetchChat, fetchHealth } from "./api";
-import type { Message } from "./types";
+import type { Message, PreferenceSummary } from "./types";
 import { AdCard } from "./components/AdCard";
 import { ChatInput } from "./components/ChatInput";
 import { ComparisonSummary } from "./components/ComparisonSummary";
@@ -27,6 +27,9 @@ export default function App() {
   }
   const [chatId, setChatId] = useState(bootRef.current.chatId);
   const [messages, setMessages] = useState<Message[]>(bootRef.current.messages);
+  const [preferenceSummary, setPreferenceSummary] = useState<PreferenceSummary | null>(
+    bootRef.current.preferenceSummary ?? null
+  );
   const [loading, setLoading] = useState(false);
   const [apiReady, setApiReady] = useState(false);
   const [statusText, setStatusText] = useState("Connecting to API…");
@@ -37,8 +40,8 @@ export default function App() {
   }, [messages, loading]);
 
   useEffect(() => {
-    persistMessages(chatId, messages);
-  }, [chatId, messages]);
+    persistMessages(chatId, messages, preferenceSummary);
+  }, [chatId, messages, preferenceSummary]);
 
   useEffect(() => {
     let cancelled = false;
@@ -81,12 +84,14 @@ export default function App() {
     const session = createSession();
     setChatId(session.chatId);
     setMessages(session.messages);
+    setPreferenceSummary(null);
   };
 
   const handleClearHistory = () => {
     if (loading) return;
     const session = clearSessionHistory(chatId);
     setMessages(session.messages);
+    setPreferenceSummary(null);
   };
 
   const handleSend = async (text: string) => {
@@ -107,12 +112,16 @@ export default function App() {
 
     try {
       const history = historyForApi(nextMessages);
-      const { reply, ads, comparison, chat_id } = await fetchChat(trimmed, {
+      const { reply, ads, comparison, chat_id, preference_summary } = await fetchChat(trimmed, {
         chatId,
         messages: history,
+        preferenceSummary,
       });
       if (chat_id && chat_id !== chatId) {
         setChatId(chat_id);
+      }
+      if (preference_summary) {
+        setPreferenceSummary(preference_summary);
       }
       const assistantMsg: Message = {
         id: messageId(),

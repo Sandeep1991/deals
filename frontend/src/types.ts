@@ -52,6 +52,14 @@ export interface ChatHistoryTurn {
   content: string;
 }
 
+export interface PreferenceSummary {
+  summary: string;
+  preferences: string[];
+  is_list_rewrite: boolean;
+  prior_grocery_items: string[];
+  rewrite_guidance: string;
+}
+
 export interface SearchResult {
   ad: Ad;
   score: number;

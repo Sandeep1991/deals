@@ -1,4 +1,4 @@
-import type { CompareResponse, Message } from "./types";
+import type { CompareResponse, Message, PreferenceSummary } from "./types";
 
 const ACTIVE_KEY = "deals.activeChatId";
 const CHATS_KEY = "deals.chats";
@@ -10,12 +10,14 @@ export interface ChatSession {
   title: string;
   updatedAt: string;
   messages: Message[];
+  preferenceSummary?: PreferenceSummary | null;
 }
 
 type StoredMessage = Omit<Message, "timestamp"> & { timestamp: string };
 
-type StoredSession = Omit<ChatSession, "messages"> & {
+type StoredSession = Omit<ChatSession, "messages" | "preferenceSummary"> & {
   messages: StoredMessage[];
+  preferenceSummary?: PreferenceSummary | null;
 };
 
 function newId(): string {
@@ -91,6 +93,7 @@ export function loadSession(chatId: string): ChatSession | null {
     title: stored.title,
     updatedAt: stored.updatedAt,
     messages: (stored.messages || []).map(deserializeMessage),
+    preferenceSummary: stored.preferenceSummary ?? null,
   };
 }
 
@@ -101,6 +104,7 @@ export function saveSession(session: ChatSession): void {
     title: session.title || titleFromMessages(session.messages),
     updatedAt: new Date().toISOString(),
     messages: session.messages.map(serializeMessage),
+    preferenceSummary: session.preferenceSummary ?? null,
   };
 
   // Cap stored chats by recency
@@ -119,6 +123,7 @@ export function createSession(): ChatSession {
     title: "New chat",
     updatedAt: new Date().toISOString(),
     messages: [createWelcomeMessage()],
+    preferenceSummary: null,
   };
   saveSession(session);
   return session;
@@ -143,6 +148,7 @@ export function listSessions(): ChatSession[] {
       title: s.title,
       updatedAt: s.updatedAt,
       messages: (s.messages || []).map(deserializeMessage),
+      preferenceSummary: s.preferenceSummary ?? null,
     }))
     .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
 }
@@ -165,12 +171,21 @@ export function historyForApi(
   }));
 }
 
-export function persistMessages(chatId: string, messages: Message[]): ChatSession {
+export function persistMessages(
+  chatId: string,
+  messages: Message[],
+  preferenceSummary?: PreferenceSummary | null
+): ChatSession {
+  const existing = loadSession(chatId);
   const session: ChatSession = {
     chatId,
     title: titleFromMessages(messages),
     updatedAt: new Date().toISOString(),
     messages,
+    preferenceSummary:
+      preferenceSummary !== undefined
+        ? preferenceSummary
+        : existing?.preferenceSummary ?? null,
   };
   saveSession(session);
   return session;
@@ -183,6 +198,7 @@ export function clearSessionHistory(chatId: string): ChatSession {
     title: "New chat",
     updatedAt: new Date().toISOString(),
     messages: [createWelcomeMessage()],
+    preferenceSummary: null,
   };
   saveSession(session);
   return session;
