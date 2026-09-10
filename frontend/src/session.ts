@@ -215,4 +215,59 @@ export function clearAllSessionHistory(): ChatSession {
   return createSession();
 }
 
+/** Delete one chat. If it was active, returns another session to switch to (or a new one). */
+export function deleteSession(
+  chatId: string,
+  opts?: { activeChatId?: string }
+): ChatSession | null {
+  const chats = readAll();
+  delete chats[chatId];
+  writeAll(chats);
+
+  const wasActive = (opts?.activeChatId ?? getActiveChatId()) === chatId;
+  const remaining = Object.values(chats).sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+
+  if (!wasActive) {
+    return null;
+  }
+  if (remaining.length === 0) {
+    return createSession();
+  }
+  const next = remaining[0];
+  setActiveChatId(next.chatId);
+  return {
+    chatId: next.chatId,
+    title: next.title,
+    updatedAt: next.updatedAt,
+    messages: (next.messages || []).map(deserializeMessage),
+    preferenceSummary: next.preferenceSummary ?? null,
+  };
+}
+
+/** Lightweight rows for the sidebar (no full message payloads). */
+export function listSessionSummaries(): { chatId: string; title: string; updatedAt: string }[] {
+  return Object.values(readAll())
+    .map((s) => ({
+      chatId: s.chatId,
+      title: s.title || "New chat",
+      updatedAt: s.updatedAt,
+    }))
+    .sort((a, b) => b.updatedAt.localeCompare(a.updatedAt));
+}
+
+export function formatSessionTime(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  const now = new Date();
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  const startOfThat = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  const dayDiff = Math.round((startOfToday.getTime() - startOfThat.getTime()) / 86400000);
+  if (dayDiff === 0) {
+    return d.toLocaleTimeString([], { hour: "numeric", minute: "2-digit" });
+  }
+  if (dayDiff === 1) return "Yesterday";
+  if (dayDiff < 7) return d.toLocaleDateString([], { weekday: "short" });
+  return d.toLocaleDateString([], { month: "short", day: "numeric" });
+}
+
 export type { CompareResponse };
