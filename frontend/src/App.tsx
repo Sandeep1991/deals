@@ -3,14 +3,19 @@ import { ApiError, fetchChat, fetchHealth } from "./api";
 import type { Message, PreferenceSummary } from "./types";
 import { AdCard } from "./components/AdCard";
 import { ChatInput } from "./components/ChatInput";
+import { ChatSidebar } from "./components/ChatSidebar";
 import { ComparisonSummary } from "./components/ComparisonSummary";
 import { MessageBubble } from "./components/MessageBubble";
 import {
   clearSessionHistory,
   createSession,
+  deleteSession,
   historyForApi,
+  listSessionSummaries,
   loadOrCreateSession,
+  loadSession,
   persistMessages,
+  setActiveChatId,
 } from "./session";
 
 function messageId() {
@@ -30,10 +35,14 @@ export default function App() {
   const [preferenceSummary, setPreferenceSummary] = useState<PreferenceSummary | null>(
     bootRef.current.preferenceSummary ?? null
   );
+  const [sessions, setSessions] = useState(() => listSessionSummaries());
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const [apiReady, setApiReady] = useState(false);
   const [statusText, setStatusText] = useState("Connecting to API…");
   const bottomRef = useRef<HTMLDivElement>(null);
+
+  const refreshSessions = () => setSessions(listSessionSummaries());
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
@@ -41,6 +50,7 @@ export default function App() {
 
   useEffect(() => {
     persistMessages(chatId, messages, preferenceSummary);
+    refreshSessions();
   }, [chatId, messages, preferenceSummary]);
 
   useEffect(() => {
@@ -79,12 +89,46 @@ export default function App() {
     };
   }, []);
 
-  const handleNewChat = () => {
-    if (loading) return;
-    const session = createSession();
+  const applySession = (session: {
+    chatId: string;
+    messages: Message[];
+    preferenceSummary?: PreferenceSummary | null;
+  }) => {
     setChatId(session.chatId);
     setMessages(session.messages);
-    setPreferenceSummary(null);
+    setPreferenceSummary(session.preferenceSummary ?? null);
+    setActiveChatId(session.chatId);
+    refreshSessions();
+  };
+
+  const handleNewChat = () => {
+    if (loading) return;
+    persistMessages(chatId, messages, preferenceSummary);
+    const session = createSession();
+    applySession(session);
+    setSidebarOpen(false);
+  };
+
+  const handleSelectChat = (id: string) => {
+    if (loading || id === chatId) {
+      setSidebarOpen(false);
+      return;
+    }
+    persistMessages(chatId, messages, preferenceSummary);
+    const session = loadSession(id);
+    if (!session) return;
+    applySession(session);
+    setSidebarOpen(false);
+  };
+
+  const handleDeleteChat = (id: string) => {
+    if (loading) return;
+    const next = deleteSession(id, { activeChatId: chatId });
+    if (next) {
+      applySession(next);
+    } else {
+      refreshSessions();
+    }
   };
 
   const handleClearHistory = () => {
@@ -92,6 +136,7 @@ export default function App() {
     const session = clearSessionHistory(chatId);
     setMessages(session.messages);
     setPreferenceSummary(null);
+    refreshSessions();
   };
 
   const handleSend = async (text: string) => {
@@ -155,90 +200,108 @@ export default function App() {
   };
 
   return (
-    <div className="app">
-      <header className="header">
-        <div className="header-inner">
-          <div className="logo">
-            <span className="logo-icon">🏷️</span>
-            <div>
-              <h1>DealFinder</h1>
-              <p className="tagline">Hybrid search across partner deals</p>
-            </div>
-          </div>
-          <div className="header-actions">
-            <button
-              type="button"
-              className="new-chat-btn"
-              onClick={handleNewChat}
-              disabled={loading}
-              title="Start a new chat"
-            >
-              New chat
-            </button>
-            <button
-              type="button"
-              className="new-chat-btn clear-history-btn"
-              onClick={handleClearHistory}
-              disabled={loading}
-              title="Clear this chat’s saved history"
-            >
-              Clear history
-            </button>
-            <div className="status" title={`Chat ${chatId}`}>
-              <span className={`status-dot ${apiReady ? "online" : ""}`} />
-              {statusText}
-            </div>
-          </div>
-        </div>
-      </header>
+    <div className="app-shell">
+      <ChatSidebar
+        chats={sessions}
+        activeChatId={chatId}
+        open={sidebarOpen}
+        disabled={loading}
+        onClose={() => setSidebarOpen(false)}
+        onNewChat={handleNewChat}
+        onSelectChat={handleSelectChat}
+        onDeleteChat={handleDeleteChat}
+        onClearActive={handleClearHistory}
+      />
 
-      <main className="chat">
-        <div className="messages">
-          {messages.map((msg) => (
-            <div key={msg.id} className={`message-row ${msg.role}`}>
-              <MessageBubble message={msg} />
-              {msg.comparison && <ComparisonSummary comparison={msg.comparison} />}
-              {msg.ads && msg.ads.length > 0 && (
-                <div className="ad-grid">
-                  {msg.ads.map((ad) => (
-                    <AdCard key={ad.id} ad={ad} />
-                  ))}
+      <div className="app">
+        <div className="app-main-inner">
+          <header className="header">
+            <div className="header-inner">
+              <div className="header-left">
+                <button
+                  type="button"
+                  className="sidebar-toggle"
+                  onClick={() => setSidebarOpen((v) => !v)}
+                  aria-label="Open chat history"
+                  title="Chat history"
+                >
+                  ☰
+                </button>
+                <div className="logo">
+                  <span className="logo-icon">🏷️</span>
+                  <div>
+                    <h1>DealFinder</h1>
+                    <p className="tagline">Hybrid search across partner deals</p>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
-
-          {loading && (
-            <div className="message-row assistant">
-              <div className="bubble assistant loading-bubble">
-                <span className="typing">
-                  <span />
-                  <span />
-                  <span />
-                </span>
+              </div>
+              <div className="header-actions">
+                <button
+                  type="button"
+                  className="new-chat-btn"
+                  onClick={handleNewChat}
+                  disabled={loading}
+                  title="Start a new chat"
+                >
+                  New chat
+                </button>
+                <div className="status" title={`Chat ${chatId}`}>
+                  <span className={`status-dot ${apiReady ? "online" : ""}`} />
+                  {statusText}
+                </div>
               </div>
             </div>
-          )}
+          </header>
 
-          <div ref={bottomRef} />
-        </div>
+          <main className="chat">
+            <div className="messages">
+              {messages.map((msg) => (
+                <div key={msg.id} className={`message-row ${msg.role}`}>
+                  <MessageBubble message={msg} />
+                  {msg.comparison && <ComparisonSummary comparison={msg.comparison} />}
+                  {msg.ads && msg.ads.length > 0 && (
+                    <div className="ad-grid">
+                      {msg.ads.map((ad) => (
+                        <AdCard key={ad.id} ad={ad} />
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
 
-        <div className="input-area">
-          <div className="suggestions">
-            {["black tea", "PBJ party deals", "taco night for 4", "coffee deals"].map((s) => (
-              <button
-                key={s}
-                className="suggestion-chip"
-                onClick={() => handleSend(s)}
-                disabled={loading}
-              >
-                {s}
-              </button>
-            ))}
-          </div>
-          <ChatInput onSend={handleSend} disabled={loading} />
+              {loading && (
+                <div className="message-row assistant">
+                  <div className="bubble assistant loading-bubble">
+                    <span className="typing">
+                      <span />
+                      <span />
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              <div ref={bottomRef} />
+            </div>
+
+            <div className="input-area">
+              <div className="suggestions">
+                {["black tea", "PBJ party deals", "taco night for 4", "coffee deals"].map((s) => (
+                  <button
+                    key={s}
+                    className="suggestion-chip"
+                    onClick={() => handleSend(s)}
+                    disabled={loading}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+              <ChatInput onSend={handleSend} disabled={loading} />
+            </div>
+          </main>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
