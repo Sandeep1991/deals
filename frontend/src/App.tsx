@@ -215,91 +215,91 @@ export default function App() {
 
       <div className="app">
         <div className="app-main-inner">
-        <header className="header">
-          <div className="header-inner">
-            <div className="header-left">
-              <button
-                type="button"
-                className="sidebar-toggle"
-                onClick={() => setSidebarOpen((v) => !v)}
-                aria-label="Open chat history"
-                title="Chat history"
-              >
-                ☰
-              </button>
-              <div className="logo">
-                <span className="logo-icon">🏷️</span>
-                <div>
-                  <h1>DealFinder</h1>
-                  <p className="tagline">Hybrid search across partner deals</p>
-                </div>
-              </div>
-            </div>
-            <div className="header-actions">
-              <button
-                type="button"
-                className="new-chat-btn"
-                onClick={handleNewChat}
-                disabled={loading}
-                title="Start a new chat"
-              >
-                New chat
-              </button>
-              <div className="status" title={`Chat ${chatId}`}>
-                <span className={`status-dot ${apiReady ? "online" : ""}`} />
-                {statusText}
-              </div>
-            </div>
-          </div>
-        </header>
-
-        <main className="chat">
-          <div className="messages">
-            {messages.map((msg) => (
-              <div key={msg.id} className={`message-row ${msg.role}`}>
-                <MessageBubble message={msg} />
-                {msg.comparison && <ComparisonSummary comparison={msg.comparison} />}
-                {msg.ads && msg.ads.length > 0 && (
-                  <div className="ad-grid">
-                    {msg.ads.map((ad) => (
-                      <AdCard key={ad.id} ad={ad} />
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-
-            {loading && (
-              <div className="message-row assistant">
-                <div className="bubble assistant loading-bubble">
-                  <span className="typing">
-                    <span />
-                    <span />
-                    <span />
-                  </span>
-                </div>
-              </div>
-            )}
-
-            <div ref={bottomRef} />
-          </div>
-
-          <div className="input-area">
-            <div className="suggestions">
-              {["black tea", "PBJ party deals", "taco night for 4", "coffee deals"].map((s) => (
+          <header className="header">
+            <div className="header-inner">
+              <div className="header-left">
                 <button
-                  key={s}
-                  className="suggestion-chip"
-                  onClick={() => handleSend(s)}
-                  disabled={loading}
+                  type="button"
+                  className="sidebar-toggle"
+                  onClick={() => setSidebarOpen((v) => !v)}
+                  aria-label="Open chat history"
+                  title="Chat history"
                 >
-                  {s}
+                  ☰
                 </button>
-              ))}
+                <div className="logo">
+                  <span className="logo-icon">🏷️</span>
+                  <div>
+                    <h1>DealFinder</h1>
+                    <p className="tagline">Hybrid search across partner deals</p>
+                  </div>
+                </div>
+              </div>
+              <div className="header-actions">
+                <button
+                  type="button"
+                  className="new-chat-btn"
+                  onClick={handleNewChat}
+                  disabled={loading}
+                  title="Start a new chat"
+                >
+                  New chat
+                </button>
+                <div className="status" title={`Chat ${chatId}`}>
+                  <span className={`status-dot ${apiReady ? "online" : ""}`} />
+                  {statusText}
+                </div>
+              </div>
             </div>
-            <ChatInput onSend={handleSend} disabled={loading} />
-          </div>
-        </main>
+          </header>
+
+          <main className="chat">
+            <div className="messages">
+              {messages.map((msg) => (
+                <div key={msg.id} className={`message-row ${msg.role}`}>
+                  <MessageBubble message={msg} />
+                  {msg.comparison && <ComparisonSummary comparison={msg.comparison} />}
+                  {msg.ads && msg.ads.length > 0 && (
+                    <div className="ad-grid">
+                      {msg.ads.map((ad) => (
+                        <AdCard key={ad.id} ad={ad} />
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+
+              {loading && (
+                <div className="message-row assistant">
+                  <div className="bubble assistant loading-bubble">
+                    <span className="typing">
+                      <span />
+                      <span />
+                      <span />
+                    </span>
+                  </div>
+                </div>
+              )}
+
+              <div ref={bottomRef} />
+            </div>
+
+            <div className="input-area">
+              <div className="suggestions">
+                {["black tea", "PBJ party deals", "taco night for 4", "coffee deals"].map((s) => (
+                  <button
+                    key={s}
+                    className="suggestion-chip"
+                    onClick={() => handleSend(s)}
+                    disabled={loading}
+                  >
+                    {s}
+                  </button>
+                ))}
+              </div>
+              <ChatInput onSend={handleSend} disabled={loading} />
+            </div>
+          </main>
         </div>
       </div>
     </div>
