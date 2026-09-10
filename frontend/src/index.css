@@ -88,6 +88,41 @@ body {
   color: var(--text-muted);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.new-chat-btn {
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.new-chat-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.new-chat-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.clear-history-btn {
+  color: var(--text-muted);
+}
+
+.clear-history-btn:hover:not(:disabled) {
+  border-color: #c45c5c;
+  color: #e07a7a;
+}
+
 .status-dot {
   width: 8px;
   height: 8px;

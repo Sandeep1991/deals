@@ -1,4 +1,4 @@
-import type { Ad, CompareResponse } from "./types";
+import type { Ad, ChatHistoryTurn, CompareResponse } from "./types";
 
 const PRODUCTION_API_URL =
   "https://deals-backend-h0czfaf0c0cjbmh5.canadacentral-01.azurewebsites.net";
@@ -32,6 +32,15 @@ export interface ChatResponse {
   ads: Ad[];
   mode?: string;
   comparison?: CompareResponse;
+  chat_id?: string | null;
+}
+
+export interface ChatRequestBody {
+  query: string;
+  limit?: number;
+  mode?: string;
+  chat_id?: string;
+  messages?: ChatHistoryTurn[];
 }
 
 function ensureApiUrl(): string {
@@ -52,19 +61,30 @@ export async function fetchHealth(): Promise<HealthResponse> {
   return response.json() as Promise<HealthResponse>;
 }
 
-export async function fetchChat(query: string, limit = 5): Promise<ChatResponse> {
+export async function fetchChat(
+  query: string,
+  options?: { limit?: number; chatId?: string; messages?: ChatHistoryTurn[]; mode?: string }
+): Promise<ChatResponse> {
   const base = ensureApiUrl();
+  const body: ChatRequestBody = {
+    query,
+    limit: options?.limit ?? 5,
+  };
+  if (options?.mode) body.mode = options.mode;
+  if (options?.chatId) body.chat_id = options.chatId;
+  if (options?.messages?.length) body.messages = options.messages;
+
   const response = await fetch(`${base}/api/chat`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ query, limit }),
+    body: JSON.stringify(body),
   });
 
   if (!response.ok) {
     let detail = `Request failed (${response.status})`;
     try {
-      const body = (await response.json()) as { detail?: string };
-      if (body.detail) detail = body.detail;
+      const errBody = (await response.json()) as { detail?: string };
+      if (errBody.detail) detail = errBody.detail;
     } catch {
       // ignore JSON parse errors
     }
@@ -85,8 +105,8 @@ export async function fetchCompare(query: string): Promise<CompareResponse> {
   if (!response.ok) {
     let detail = `Request failed (${response.status})`;
     try {
-      const body = (await response.json()) as { detail?: string };
-      if (body.detail) detail = body.detail;
+      const errBody = (await response.json()) as { detail?: string };
+      if (errBody.detail) detail = errBody.detail;
     } catch {
       // ignore JSON parse errors
     }

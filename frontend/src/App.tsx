@@ -5,21 +5,28 @@ import { AdCard } from "./components/AdCard";
 import { ChatInput } from "./components/ChatInput";
 import { ComparisonSummary } from "./components/ComparisonSummary";
 import { MessageBubble } from "./components/MessageBubble";
+import {
+  clearSessionHistory,
+  createSession,
+  historyForApi,
+  loadOrCreateSession,
+  persistMessages,
+} from "./session";
 
-const WELCOME: Message = {
-  id: "welcome",
-  role: "assistant",
-  content:
-    "Hi! I'm DealFinder. Ask me about deals on anything — tea, soap, coffee, household items, and more. I'll search our partner offers and show you the best matches.",
-  timestamp: new Date(),
-};
-
-function uid() {
+function messageId() {
+  if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
+    return crypto.randomUUID();
+  }
   return Math.random().toString(36).slice(2);
 }
 
 export default function App() {
-  const [messages, setMessages] = useState<Message[]>([WELCOME]);
+  const bootRef = useRef<ReturnType<typeof loadOrCreateSession> | null>(null);
+  if (!bootRef.current) {
+    bootRef.current = loadOrCreateSession();
+  }
+  const [chatId, setChatId] = useState(bootRef.current.chatId);
+  const [messages, setMessages] = useState<Message[]>(bootRef.current.messages);
   const [loading, setLoading] = useState(false);
   const [apiReady, setApiReady] = useState(false);
   const [statusText, setStatusText] = useState("Connecting to API…");
@@ -28,6 +35,10 @@ export default function App() {
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth", block: "end" });
   }, [messages, loading]);
+
+  useEffect(() => {
+    persistMessages(chatId, messages);
+  }, [chatId, messages]);
 
   useEffect(() => {
     let cancelled = false;
@@ -65,24 +76,46 @@ export default function App() {
     };
   }, []);
 
+  const handleNewChat = () => {
+    if (loading) return;
+    const session = createSession();
+    setChatId(session.chatId);
+    setMessages(session.messages);
+  };
+
+  const handleClearHistory = () => {
+    if (loading) return;
+    const session = clearSessionHistory(chatId);
+    setMessages(session.messages);
+  };
+
   const handleSend = async (text: string) => {
     const trimmed = text.trim();
     if (!trimmed || loading) return;
 
     const userMsg: Message = {
-      id: uid(),
+      id: messageId(),
       role: "user",
       content: trimmed,
       timestamp: new Date(),
     };
 
-    setMessages((prev) => [...prev, userMsg]);
+    const prior = messages;
+    const nextMessages = [...prior, userMsg];
+    setMessages(nextMessages);
     setLoading(true);
 
     try {
-      const { reply, ads, comparison } = await fetchChat(trimmed);
+      const history = historyForApi(nextMessages);
+      const { reply, ads, comparison, chat_id } = await fetchChat(trimmed, {
+        chatId,
+        messages: history,
+      });
+      if (chat_id && chat_id !== chatId) {
+        setChatId(chat_id);
+      }
       const assistantMsg: Message = {
-        id: uid(),
+        id: messageId(),
         role: "assistant",
         content: reply,
         ads,
@@ -99,7 +132,7 @@ export default function App() {
           : "Something went wrong while searching. Please try again.";
 
       const assistantMsg: Message = {
-        id: uid(),
+        id: messageId(),
         role: "assistant",
         content: `Sorry, I couldn't reach the deals API. ${detail}`,
         timestamp: new Date(),
@@ -123,9 +156,29 @@ export default function App() {
               <p className="tagline">Hybrid search across partner deals</p>
             </div>
           </div>
-          <div className="status">
-            <span className={`status-dot ${apiReady ? "online" : ""}`} />
-            {statusText}
+          <div className="header-actions">
+            <button
+              type="button"
+              className="new-chat-btn"
+              onClick={handleNewChat}
+              disabled={loading}
+              title="Start a new chat"
+            >
+              New chat
+            </button>
+            <button
+              type="button"
+              className="new-chat-btn clear-history-btn"
+              onClick={handleClearHistory}
+              disabled={loading}
+              title="Clear this chat’s saved history"
+            >
+              Clear history
+            </button>
+            <div className="status" title={`Chat ${chatId}`}>
+              <span className={`status-dot ${apiReady ? "online" : ""}`} />
+              {statusText}
+            </div>
           </div>
         </div>
       </header>
