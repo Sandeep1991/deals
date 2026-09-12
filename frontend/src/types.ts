@@ -38,12 +38,29 @@ export interface CompareResponse {
   merchants?: MerchantBasket[];
 }
 
+export interface ClarificationQuestion {
+  id: string;
+  letter: string;
+  intent: string;
+  intent_label: string;
+  question: string;
+  options: string[];
+  similarity_key?: string;
+}
+
+export interface ClarificationPrompt {
+  needs_clarification: boolean;
+  intro: string;
+  questions: ClarificationQuestion[];
+}
+
 export interface Message {
   id: string;
   role: "user" | "assistant";
   content: string;
   ads?: Ad[];
   comparison?: CompareResponse;
+  clarification?: ClarificationPrompt;
   timestamp: Date;
 }
 

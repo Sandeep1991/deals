@@ -1,4 +1,4 @@
-import type { Ad, ChatHistoryTurn, CompareResponse, PreferenceSummary } from "./types";
+import type { Ad, ChatHistoryTurn, ClarificationPrompt, CompareResponse, PreferenceSummary } from "./types";
 
 const PRODUCTION_API_URL =
   "https://deals-backend-h0czfaf0c0cjbmh5.canadacentral-01.azurewebsites.net";
@@ -34,6 +34,7 @@ export interface ChatResponse {
   comparison?: CompareResponse;
   chat_id?: string | null;
   preference_summary?: PreferenceSummary | null;
+  clarification?: ClarificationPrompt | null;
 }
 
 export interface ChatRequestBody {
