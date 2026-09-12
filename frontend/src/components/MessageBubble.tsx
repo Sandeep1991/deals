@@ -1,5 +1,6 @@
 import type { ClarificationPrompt, Message } from "../types";
 import { ClarificationChoices } from "./ClarificationChoices";
+import { parseClarificationFromMarkdown } from "../parseClarification";
 
 interface Props {
   message: Message;
@@ -100,12 +101,42 @@ function clarifyFallbackText(content: string, clarification?: ClarificationPromp
   return text || clarification.intro || content;
 }
 
+function resolveClarification(message: Message): ClarificationPrompt | undefined {
+  if (message.clarification?.questions?.length) {
+    // Still collapse duplicate topics if API sent them.
+    const seen = new Set<string>();
+    const questions = [];
+    for (const q of message.clarification.questions) {
+      const key = (q.similarity_key || q.question || "").toLowerCase();
+      const topic =
+        /(ready[- ]made|store[- ]bought|bake|homemade|ingredients|make at home)/.test(key)
+          ? "fulfillment_path"
+          : key.slice(0, 64);
+      if (seen.has(topic)) continue;
+      seen.add(topic);
+      questions.push(q);
+    }
+    if (questions.length !== message.clarification.questions.length) {
+      const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      return {
+        ...message.clarification,
+        questions: questions.map((q, i) => ({
+          ...q,
+          letter: letters[i] || String(i + 1),
+        })),
+      };
+    }
+    return message.clarification;
+  }
+  return parseClarificationFromMarkdown(message.content) || undefined;
+}
+
 export function MessageBubble({ message, interactive, disabled, onClarifyAnswer }: Props) {
-  const clarification = message.clarification;
+  const clarification = resolveClarification(message);
   const showChoices =
     message.role === "assistant" &&
-    clarification?.needs_clarification &&
-    (clarification.questions?.length || 0) > 0;
+    Boolean(clarification?.needs_clarification) &&
+    (clarification?.questions?.length || 0) > 0;
 
   return (
     <div className={`bubble ${message.role}`}>
@@ -118,9 +149,9 @@ export function MessageBubble({ message, interactive, disabled, onClarifyAnswer 
         {showChoices
           ? formatContent(clarifyFallbackText(message.content, clarification))
           : formatContent(message.content)}
-        {showChoices && interactive && onClarifyAnswer && (
+        {showChoices && interactive && onClarifyAnswer && clarification && (
           <ClarificationChoices
-            clarification={clarification!}
+            clarification={clarification}
             disabled={disabled}
             onAnswer={onClarifyAnswer}
           />

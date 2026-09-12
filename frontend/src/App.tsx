@@ -263,7 +263,9 @@ export default function App() {
                 const isLatestClarify =
                   index === messages.length - 1 &&
                   msg.role === "assistant" &&
-                  Boolean(msg.clarification?.needs_clarification);
+                  (Boolean(msg.clarification?.needs_clarification) ||
+                    /before i plan/i.test(msg.content) ||
+                    /a few details/i.test(msg.content));
                 return (
                   <div key={msg.id} className={`message-row ${msg.role}`}>
                     <MessageBubble
