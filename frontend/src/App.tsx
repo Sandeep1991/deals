@@ -157,11 +157,14 @@ export default function App() {
 
     try {
       const history = historyForApi(nextMessages);
-      const { reply, ads, comparison, chat_id, preference_summary } = await fetchChat(trimmed, {
-        chatId,
-        messages: history,
-        preferenceSummary,
-      });
+      const { reply, ads, comparison, chat_id, preference_summary, clarification } = await fetchChat(
+        trimmed,
+        {
+          chatId,
+          messages: history,
+          preferenceSummary,
+        }
+      );
       if (chat_id && chat_id !== chatId) {
         setChatId(chat_id);
       }
@@ -174,6 +177,7 @@ export default function App() {
         content: reply,
         ads,
         comparison,
+        clarification: clarification || undefined,
         timestamp: new Date(),
       };
       setMessages((prev) => [...prev, assistantMsg]);
@@ -255,19 +259,30 @@ export default function App() {
 
           <main className="chat">
             <div className="messages">
-              {messages.map((msg) => (
-                <div key={msg.id} className={`message-row ${msg.role}`}>
-                  <MessageBubble message={msg} />
-                  {msg.comparison && <ComparisonSummary comparison={msg.comparison} />}
-                  {msg.ads && msg.ads.length > 0 && (
-                    <div className="ad-grid">
-                      {msg.ads.map((ad) => (
-                        <AdCard key={ad.id} ad={ad} />
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+              {messages.map((msg, index) => {
+                const isLatestClarify =
+                  index === messages.length - 1 &&
+                  msg.role === "assistant" &&
+                  Boolean(msg.clarification?.needs_clarification);
+                return (
+                  <div key={msg.id} className={`message-row ${msg.role}`}>
+                    <MessageBubble
+                      message={msg}
+                      interactive={isLatestClarify}
+                      disabled={loading}
+                      onClarifyAnswer={handleSend}
+                    />
+                    {msg.comparison && <ComparisonSummary comparison={msg.comparison} />}
+                    {msg.ads && msg.ads.length > 0 && (
+                      <div className="ad-grid">
+                        {msg.ads.map((ad) => (
+                          <AdCard key={ad.id} ad={ad} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
 
               {loading && (
                 <div className="message-row assistant">

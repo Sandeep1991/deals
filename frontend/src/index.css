@@ -603,6 +603,123 @@ body {
   cursor: not-allowed;
 }
 
+.clarify-panel {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.clarify-intro {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.clarify-question {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-elevated);
+}
+
+.clarify-question-title {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.clarify-letter {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(16, 163, 127, 0.15);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.clarify-intent {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.clarify-prompt {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.clarify-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.clarify-option {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--bg-input);
+  color: var(--text);
+  font-size: 0.88rem;
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+
+.clarify-option:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.clarify-option.selected {
+  border-color: var(--accent);
+  background: rgba(16, 163, 127, 0.18);
+}
+
+.clarify-option:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.clarify-actions {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.clarify-send {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clarify-send:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.clarify-send:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.clarify-expired {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
 .chat-input {
   display: flex;
   align-items: flex-end;

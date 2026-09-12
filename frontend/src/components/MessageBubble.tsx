@@ -1,7 +1,12 @@
-import type { Message } from "../types";
+import type { ClarificationPrompt, Message } from "../types";
+import { ClarificationChoices } from "./ClarificationChoices";
 
 interface Props {
   message: Message;
+  /** Only the latest clarify prompt should be interactive. */
+  interactive?: boolean;
+  disabled?: boolean;
+  onClarifyAnswer?: (text: string) => void;
 }
 
 function formatInline(text: string) {
@@ -74,7 +79,34 @@ function formatContent(text: string) {
   return blocks;
 }
 
-export function MessageBubble({ message }: Props) {
+/** When structured clarify UI is shown, keep only the intro / session-facts lines. */
+function clarifyFallbackText(content: string, clarification?: ClarificationPrompt) {
+  if (!clarification?.questions?.length) return content;
+  const lines = content.split("\n");
+  const kept: string[] = [];
+  for (const line of lines) {
+    const t = line.trim();
+    if (!t) {
+      if (kept.length) kept.push("");
+      continue;
+    }
+    // Drop lettered question blocks and numbered options — chips replace them.
+    if (/^\*\*[A-Z]\.\s/.test(t) || /^[A-Z]\.\s/.test(t)) break;
+    if (/^\d+\.\s/.test(t)) continue;
+    if (/^tap an option/i.test(t) || /^reply with answers/i.test(t)) continue;
+    kept.push(line);
+  }
+  const text = kept.join("\n").trim();
+  return text || clarification.intro || content;
+}
+
+export function MessageBubble({ message, interactive, disabled, onClarifyAnswer }: Props) {
+  const clarification = message.clarification;
+  const showChoices =
+    message.role === "assistant" &&
+    clarification?.needs_clarification &&
+    (clarification.questions?.length || 0) > 0;
+
   return (
     <div className={`bubble ${message.role}`}>
       {message.role === "assistant" && (
@@ -82,7 +114,21 @@ export function MessageBubble({ message }: Props) {
           🏷️
         </span>
       )}
-      <div className="bubble-content">{formatContent(message.content)}</div>
+      <div className="bubble-content">
+        {showChoices
+          ? formatContent(clarifyFallbackText(message.content, clarification))
+          : formatContent(message.content)}
+        {showChoices && interactive && onClarifyAnswer && (
+          <ClarificationChoices
+            clarification={clarification!}
+            disabled={disabled}
+            onAnswer={onClarifyAnswer}
+          />
+        )}
+        {showChoices && !interactive && (
+          <p className="clarify-expired">Options were shown for this question earlier in the chat.</p>
+        )}
+      </div>
     </div>
   );
 }
